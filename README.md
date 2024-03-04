@@ -26,8 +26,8 @@ export BRANCH=master MAIN=master RUN=1 && source calver.sh
 
 ### Why the 1s?
 
-For some reason nuget tools drops zeros in package versions. For the package to remain alphabeticaly sorted, we need to have 1s in front of month and day.
+For some reason, nuget tools drop zeros in package versions. For the package to remain alphabetically sorted, we need to have 1s in front of month and day.
 
 ### Why RUN is required
 
-Based on the assumption that there's always a need to avoid conflicts if there's more than one build in a day. So the only sensible scenario is that the tool just use incorrectly for some reason, which should be prevented.
+Based on the assumption that there's always a need to avoid conflicts if there's more than one build in a day. So the only sensible scenario is a mistake, which should be prevented.
