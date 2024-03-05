@@ -7,5 +7,5 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - id: version
-        uses: astorDev/versy/calver@${{ github.ref }}
+        uses: astorDev/versy/calver@${{ github.head_ref }}
       - run: echo "Received version is ${{ steps.version.outputs.version }}"
