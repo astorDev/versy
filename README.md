@@ -16,13 +16,13 @@ Here's how it works (Don't forget to `cd calver`)
 > Imagining today is 4th of March, 2024
 
 ```sh
-export BRANCH=feature/one RUN=9 && source calver.sh 
+export BRANCH=feature/one RUN=9 && calver/.sh 
 # produces: 2024.103.104.9-feature-one
 
-export BRANCH=main RUN=1 && source calver.sh 
+export BRANCH=main RUN=1 && calver/.sh 
 # produces: 2024.103.104.1
 
-export BRANCH=master MAIN=master RUN=1 && source calver.sh 
+export BRANCH=master MAIN=master RUN=1 && calver/.sh 
 # produces 2024.103.104.1
 ```
 

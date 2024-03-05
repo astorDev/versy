@@ -5,6 +5,5 @@ if [ "$RUN" = "" ]; then
     exit 1
 fi
 
-source ../suffix.sh
-export VERSION=$(date +'%Y.1%m.1%d').$RUN$SUFFIX
-echo "Version is: $VERSION"
+SUFFIX=$(./suffix.sh) # assumes running from the root
+echo VERSION=$(date +'%Y.1%m.1%d').$RUN$SUFFIX

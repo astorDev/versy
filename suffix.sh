@@ -3,13 +3,13 @@ if [ "$BRANCH" = "" ]; then
     exit 1
 fi
 
-source main.sh
+if [ "${MAIN}" = "" ]; then
+    MAIN="main"
+fi
 
 if [ "$BRANCH" = "$MAIN" ]; then
-    echo "This is the main branch (named $MAIN). No suffix."
-    export SUFFIX=""
+    echo ""
 else
     NORMALIZED=${BRANCH//\//-}
-    export SUFFIX="-$NORMALIZED"
-    echo "Not the main branch. Suffix (with branch name normalized): $SUFFIX"
+    echo "-$NORMALIZED"
 fi

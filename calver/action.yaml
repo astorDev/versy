@@ -14,7 +14,7 @@ runs:
   using: "composite"
   steps:
     - id: calver
-      run: serve calver.sh && echo "version=${VERSION}" >> $GITHUB_OUTPUT
+      run: echo "version=$(./calver/.sh)" >> $GITHUB_OUTPUT
       shell: bash
       env:
         BRANCH: $GITHUB_REF_NAME
