@@ -1,0 +1,27 @@
+name: 'CalVer'
+description: 'Generates a CalVer version number'
+
+inputs:
+  main:
+    description: 'Name of your main branch'
+    required: false
+    default: 'main'
+outputs:
+  version:
+    description: 'The generated version number'
+    value: ${{ steps.calver.outputs.version }}
+runs:
+  using: "composite"
+  steps:
+    - id: suffix
+      run: echo "suffix=$(./suffix.sh)" >> $GITHUB_OUTPUT
+      shell: bash
+      env:
+        BRANCH: ${{ github.ref_name }}
+        MAIN: ${{ inputs.main }}
+    - id: calver
+      run: echo "version=$(./calver/.sh)" >> $GITHUB_OUTPUT
+      shell: bash
+      env:
+        RUN: ${{ github.run_number }}
+        SUFFIX: ${{ steps.suffix.outputs.suffix }}

@@ -13,15 +13,14 @@ Best practices and tools for versioning.
 
 Here's how it works:
 
+> Imagining today is 5th of March, 2024
+
 ```sh
-export BRANCH=feature/one RUN=9 && source calver.sh 
-# produces: 2024.103.104.9-feature-one
+export BRANCH=feature/five && export SUFFIX=$(./suffix.sh) RUN=1 && echo $(./calver/.sh)
+# 2024.103.105.1-feature-five
 
-export BRANCH=main RUN=1 && source calver.sh 
-# produces: 2024.103.104.1
-
-export BRANCH=master MAIN=master RUN=1 && source calver.sh 
-# produces 2024.103.104.1
+export BRANCH=main && export SUFFIX=$(./suffix.sh) RUN=9 && echo $(./calver/.sh)
+# 2024.103.105.9
 ```
 
 ### Why the 1s?
