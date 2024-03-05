@@ -11,7 +11,7 @@ Best practices and tools for versioning.
 - Alphabetical
 - Fully nuget-compatible
 
-Here's how it works (Don't forget to `cd calver`)
+Here's how it works:
 
 > Imagining today is 5th of March, 2024
 
