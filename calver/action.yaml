@@ -1,14 +1,14 @@
 name: 'CalVer'
-descriptions: 'Generates a CalVer version number'
+description: 'Generates a CalVer version number'
 
 inputs:
   main:
-    descriptions: 'Name of your main branch'
+    description: 'Name of your main branch'
     required: false
     default: 'main'
 outputs:
   version:
-    descriptions: 'The generated version number'
+    description: 'The generated version number'
     value: ${{ steps.calver.outputs.version }}
 runs:
   using: "composite"
