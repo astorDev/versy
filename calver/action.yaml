@@ -13,10 +13,14 @@ outputs:
 runs:
   using: "composite"
   steps:
+    - id: suffix
+      run: echo "suffix=$(./suffix.sh)" >> $GITHUB_OUTPUT
+      env:
+        BRANCH: ${{ github.ref_name }}
+        MAIN: ${{ inputs.main }}
     - id: calver
       run: echo "version=$(./calver/.sh)" >> $GITHUB_OUTPUT
       shell: bash
       env:
-        BRANCH: ${{ github.ref_name }}
         RUN: ${{ github.run_number }}
-        MAIN: ${{ inputs.main }}
+        SUFFIX: ${{ steps.suffix.outputs.suffix }}
