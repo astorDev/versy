@@ -17,6 +17,6 @@ runs:
       run: echo "version=$(./calver/.sh)" >> $GITHUB_OUTPUT
       shell: bash
       env:
-        BRANCH: ${{ github.ref }}
+        BRANCH: ${{ github.ref_name }}
         RUN: ${{ github.run_number }}
         MAIN: ${{ inputs.main }}
