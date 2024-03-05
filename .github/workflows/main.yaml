@@ -1,0 +1,11 @@
+on:
+  push:
+      
+jobs:
+  ouput_version:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - id: version
+        uses: versy/calver@main
+      - run: echo "Received version is ${{ steps.version.outputs.version }}"

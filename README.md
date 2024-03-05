@@ -11,7 +11,9 @@ Best practices and tools for versioning.
 - Alphabetical
 - Fully nuget-compatible
 
-Here's how it works:
+Here's how it works (Don't forget to `cd calver`)
+
+> Imagining today is 4th of March, 2024
 
 ```sh
 export BRANCH=feature/one RUN=9 && source calver.sh 

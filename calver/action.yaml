@@ -1,0 +1,22 @@
+name: 'CalVer'
+descriptions: 'Generates a CalVer version number'
+
+inputs:
+  main:
+    descriptions: 'Name of your main branch'
+    required: false
+    default: 'main'
+outputs:
+  version:
+    descriptions: 'The generated version number'
+    value: ${{ steps.calver.outputs.version }}
+runs:
+  using: "composite"
+  steps:
+    - id: calver
+      run: serve calver.sh && echo "version=${VERSION}" >> $GITHUB_OUTPUT
+      shell: bash
+      env:
+        BRANCH: $GITHUB_REF_NAME
+        RUN: $GITHUB_RUN_NUMBER
+        MAIN: ${{ inputs.main }}

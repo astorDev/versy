@@ -1,1 +1,0 @@
-export CURRENT_BRANCH=myfeature && source suffix.sh && echo $SUFFIX
