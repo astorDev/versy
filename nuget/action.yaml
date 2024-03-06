@@ -1,0 +1,29 @@
+name: 'Nuget Pack & Publish'
+description: 'Packs & Publishes Nuget Package'
+
+inputs:
+  version:
+    description: 'Project Version to publish'
+    required: true
+  project:
+    description: 'Path to .csproj file (without .csproj and `./`)'
+    required: true
+  nuget_api_key:
+    description: 'Nuget API key'
+    required: true
+  nuget_source:
+    description: 'Nuget source'
+    required: false
+    default: 'https://api.nuget.org/v3/index.json'
+runs:
+  using: "composite"
+  steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-dotnet@v3
+    - shell: bash
+      env:
+        VERSION: ${{ inputs.version }}
+        PROJECT: ${{ inputs.project }}
+        NUGET_API_KEY: ${{ inputs.nuget_api_key }}
+        NUGET_SOURCE: ${{ inputs.nuget_source }}
+      run: sh nuget/.sh

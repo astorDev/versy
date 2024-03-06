@@ -5,7 +5,13 @@ jobs:
   ouput_version:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
       - id: version
         uses: astorDev/versy/calver@main
       - run: echo "Received version is ${{ steps.version.outputs.version }}"
+  publish_calver_nuget:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: astorDev/versy/calver/nuget@main
+        with:
+          project: 'nuget/Versy.Nuget'
+          nuget_api_key: ${{ secrets.NUGET_API_KEY }}
