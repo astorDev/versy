@@ -1,0 +1,33 @@
+name: 'CalVer Nuget'
+description: 'Packs & Publishes Nuget with generated CalVer version number'
+
+inputs:
+  main:
+    description: 'Name of your main branch'
+    required: false
+    default: 'main'
+  project:
+    description: 'Path to .csproj file (without .csproj and `./`)'
+    required: true
+  nuget_api_key:
+    description: 'Nuget API key'
+    required: true
+  nuget_source:
+    description: 'Nuget source'
+    required: false
+    default: 'https://api.nuget.org/v3/index.json'
+runs:
+  using: "composite"
+  steps:
+    - uses: actions/checkout@v4
+    - uses: actions/setup-dotnet@v2
+    - id: version
+      uses: astorDev/versy/calver@main
+      with:
+        main: ${{ inputs.main }}
+    - uses: astorDev/versy/nuget@nuget-action
+      with:
+        version: ${{ steps.version.outputs.version }}
+        project: ${{ inputs.project }}
+        nuget_api_key: ${{ inputs.nuget_api_key }}
+        nuget_source: ${{ inputs.nuget_source }}

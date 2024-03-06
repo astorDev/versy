@@ -11,12 +11,7 @@ jobs:
   publish_calver_nuget:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-dotnet@v2
-      - id: version
-        uses: astorDev/versy/calver@main
-      - uses: astorDev/versy/nuget@nuget-action
+      - uses: astorDev/versy/calver/nuget@nuget-action
         with:
-          version: ${{ steps.version.outputs.version }}
           project: 'nuget/Versy.Nuget'
           nuget_api_key: ${{ secrets.NUGET_API_KEY }}
