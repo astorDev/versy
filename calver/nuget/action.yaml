@@ -1,0 +1,30 @@
+name: 'CalVer Nuget'
+description: 'Publishes a Nuget with a CalVer based version number'
+
+inputs:
+  main:
+    description: 'Name of your main branch'
+    required: true
+    default: 'main'
+  project:
+    description: 'Path to .csproj file (without .csproj, starting with `./`)'
+    required: true
+  nuget_api_key:
+    description: 'Nuget API key'
+    required: true
+    default: ${{ secrets.NUGET_API_KEY }}
+runs:
+  using: "composite"
+  steps:
+    - id: calver
+      uses: astorDev/versy/calver@main
+      env:
+        MAIN: ${{ inputs.main }}
+    - uses: actions/checkout@v2
+    - uses: actions/setup-dotnet@v3
+    - shell: bash
+      env:
+        VERSION: ${{ steps.calver.outputs.version }}
+        PROJECT: ${{ inputs.project }}
+        NUGET_API_KEY: ${{ inputs.nuget_api_key }}
+      run: sh calver/nuget/.sh
