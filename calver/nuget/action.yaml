@@ -15,11 +15,11 @@ inputs:
 runs:
   using: "composite"
   steps:
+    - uses: actions/checkout@v2
     - id: calver
       uses: astorDev/versy/calver@main
       env:
         MAIN: ${{ inputs.main }}
-    - uses: actions/checkout@v2
     - uses: actions/setup-dotnet@v3
     - shell: bash
       env:
