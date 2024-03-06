@@ -12,7 +12,6 @@ inputs:
   nuget_api_key:
     description: 'Nuget API key'
     required: true
-    default: ${{ secrets.NUGET_API_KEY }}
 runs:
   using: "composite"
   steps:
