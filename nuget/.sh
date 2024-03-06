@@ -18,8 +18,8 @@ if [ "$NUGET_SOURCE" = "" ]; then
     NUGET_SOURCE="https://api.nuget.org/v3/index.json"
 fi
 
-echo "Packing project with: 'dotnet pack $PROJECT.csproj /p:PackageVersion=$VERSION -o ./'"
-dotnet pack $PROJECT.csproj /p:PackageVersion=$VERSION -o ./
+echo "Packing project with: 'dotnet pack ./$PROJECT.csproj /p:PackageVersion=$VERSION -o ./'"
+dotnet pack ./$PROJECT.csproj /p:PackageVersion=$VERSION -o ./
 
 echo "Extracting project name with: 'PROJECT_NAME=\${PROJECT##*/}'"
 PROJECT_NAME=${PROJECT##*/}
