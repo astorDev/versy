@@ -25,7 +25,7 @@ runs:
       uses: astorDev/versy/calver@main
       with:
         main: ${{ inputs.main }}
-    - uses: astorDev/versy/nuget@nuget-action
+    - uses: astorDev/versy/nuget@main
       with:
         version: ${{ steps.version.outputs.version }}
         project: ${{ inputs.project }}
