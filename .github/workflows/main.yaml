@@ -7,7 +7,13 @@ jobs:
     steps:
       - id: version
         uses: astorDev/versy/calver@main
-      - run: echo "Received version is ${{ steps.version.outputs.version }}"
+      - run: |
+          if [ "${{ steps.version.outputs.version }}" = "" ]; then
+            echo "No version found"
+            exit 1
+          fi
+
+          echo "Received version is ${{ steps.version.outputs.version }}"
   publish_calver_nuget:
     runs-on: ubuntu-latest
     steps:
