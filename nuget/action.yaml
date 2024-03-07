@@ -30,4 +30,4 @@ runs:
         PROJECT: ${{ inputs.project }}
         NUGET_API_KEY: ${{ inputs.nuget_api_key }}
         NUGET_SOURCE: ${{ inputs.nuget_source }}
-      run: sh versy-nuget/nuget/.sh
+      run: sh ./versy-nuget/nuget/.sh
