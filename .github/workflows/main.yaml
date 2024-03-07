@@ -6,7 +6,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - id: version
-        uses: astorDev/versy/calver@deconflicting
+        uses: astorDev/versy/calver@main
       - run: |
           if [ "${{ steps.version.outputs.version }}" = "" ]; then
             echo "No version found"
@@ -17,7 +17,7 @@ jobs:
   publish_calver_nuget:
     runs-on: ubuntu-latest
     steps:
-      - uses: astorDev/versy/calver/nuget@deconflicting
+      - uses: astorDev/versy/calver/nuget@main
         with:
           project: 'nuget/Versy.Nuget'
           nuget_api_key: ${{ secrets.NUGET_API_KEY }}
