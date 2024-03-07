@@ -15,8 +15,8 @@ runs:
   steps:
     - uses: actions/checkout@v4
       with:
-        repository: 'astorDev/versy-calver'
-        path: 'versy'
+        repository: 'astorDev/versy'
+        path: 'versy-calver'
     - id: suffix
       run: echo "suffix=$(./versy-calver/suffix.sh)" >> $GITHUB_OUTPUT
       shell: bash
