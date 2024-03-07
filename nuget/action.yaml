@@ -21,6 +21,7 @@ runs:
     - uses: actions/checkout@v4
       with:
         repository: 'astorDev/versy'
+        path: 'versy-nuget'
     - uses: actions/checkout@v4
     - uses: actions/setup-dotnet@v4
     - shell: bash
@@ -29,4 +30,4 @@ runs:
         PROJECT: ${{ inputs.project }}
         NUGET_API_KEY: ${{ inputs.nuget_api_key }}
         NUGET_SOURCE: ${{ inputs.nuget_source }}
-      run: sh nuget/.sh
+      run: sh versy-nuget/nuget/.sh
