@@ -1,8 +1,8 @@
 # Versy
 
-Best practices and tools for versioning and package management.
+GitHub Actions for [CalVer](./calver/README.md) & [NuGet](./nuget/README.md).
 
-GitHub workflow to publish [NuGet](./nuget/README.md) with [CalVer](./calver/README.md)
+In your repo create `.github/workflows/nuget.yml` with
 
 ```yaml
 on:
@@ -19,12 +19,6 @@ jobs:
           nuget_api_key: ${{ secrets.NUGET_API_KEY }}
 ```
 
-The version you''ll get:
+And you'll get nugets published every time you push with version like this:
 
 <img src="./calver/colored-version.png" alt="drawing" width="600"/>
-
-- 🔵 Library name
-- 🟡 Current date
-- 🔴 Avoiding trailing 0s
-- 🟣 CI run
-- 🟢 Branch name suffix (for non-main branches)
