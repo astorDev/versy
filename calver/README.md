@@ -1,5 +1,7 @@
 # CalVer
 
+<img src="./calver.png" alt="drawing" width="400"/>
+
 Yet another calendar-based versioning, which is
 
 - Effortless
