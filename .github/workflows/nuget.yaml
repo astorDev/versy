@@ -5,7 +5,7 @@ jobs:
   publish_nuget:
     runs-on: ubuntu-latest
     steps:
-      - uses: astorDev/versy/calver/nuget@main
+      - uses: astorDev/versy/nuget@main
         with:
           project: 'nuget/Versy.Nuget'
           nuget_api_key: ${{ secrets.NUGET_API_KEY }}
