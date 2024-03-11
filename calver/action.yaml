@@ -24,7 +24,11 @@ runs:
     #     BRANCH: ${{ github.ref_name }}
     #     MAIN: ${{ inputs.main }}
     - id: calver
-      run: curl -sSL https://raw.githubusercontent.com/astorDev/versy/powerful-calver/calver/full.sh | sh
+      run: |
+        OUTPUT=$(curl -sSL https://raw.githubusercontent.com/astorDev/versy/powerful-calver/calver/full.sh | sh)
+        echo "$OUTPUT"
+        VERSION=$("$OUTPUT" | grep "VERSION is" | awk '{print $3}')
+        echo "version=$OUTPUT" >> $GITHUB_ENV
       shell: bash
       env:
         BRANCH: ${{ github.ref_name }}
