@@ -8,8 +8,10 @@ if [ "${MAIN}" = "" ]; then
 fi
 
 if [ "$BRANCH" = "$MAIN" ]; then
-    echo ""
+    echo "Branch is main - no suffix"
+    echo "SUFFIX="
 else
+    echo "Branch is not main - replacing / with - and adding - as suffix"
     NORMALIZED=${BRANCH//\//-}
-    echo "-$NORMALIZED"
+    echo "SUFFIX=-$NORMALIZED"
 fi
