@@ -20,7 +20,7 @@ runs:
   using: "composite"
   steps:
     - id: version
-      uses: astorDev/versy/calver@powerful-calver
+      uses: astorDev/versy/calver@main
       with:
         main: ${{ inputs.main }}
     - uses: astorDev/versy/nuget@main
