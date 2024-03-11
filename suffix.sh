@@ -1,4 +1,4 @@
-echo "Calculating suffix (BRANCH=$BRANCH, MAIN=$MAIN)"
+echo "Calculating suffix (BRANCH is '$BRANCH', MAIN is '$MAIN')"
 
 if [ "$BRANCH" = "" ]; then
     echo "Required variable BRANCH is empty. exiting..."
@@ -11,10 +11,10 @@ if [ "${MAIN}" = "" ]; then
 fi
 
 if [ "$BRANCH" = "$MAIN" ]; then
-    echo "Branch is main - no suffix"
-    echo "SUFFIX="
+    echo "This is main branch suffix is empty"
+    echo "SUFFIX is"
 else
     echo "Branch '$BRANCH' is not main - calculating suffix..."
     NORMALIZED=$(echo "$BRANCH" | sed 's/\//-/g')
-    echo "SUFFIX=-$NORMALIZED"
+    echo "SUFFIX is -$NORMALIZED"
 fi
