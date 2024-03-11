@@ -1,4 +1,4 @@
-echo "Calculating suffix (BRANCH is '$BRANCH', MAIN is '$MAIN')"
+echo "Calculating suffix (BRANCH='$BRANCH', MAIN='$MAIN')"
 
 if [ "$BRANCH" = "" ]; then
     echo "Required variable BRANCH is empty. exiting..."
