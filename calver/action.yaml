@@ -15,7 +15,7 @@ runs:
   steps:
     - id: calver
       run: |
-        OUTPUT=$(curl -sSL https://raw.githubusercontent.com/astorDev/versy/maincalver/full.sh | sh)
+        OUTPUT=$(curl -sSL https://raw.githubusercontent.com/astorDev/versy/main/calver/full.sh | sh)
         echo "$OUTPUT"
         VERSION=$(echo "$OUTPUT" | grep "VERSION is" | awk '{print $3}')
         echo ""
