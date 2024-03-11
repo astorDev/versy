@@ -13,19 +13,15 @@ outputs:
 runs:
   using: "composite"
   steps:
-    - uses: actions/checkout@v4
-      with:
-        repository: 'astorDev/versy'
-        path: 'versy-calver'
-    - id: suffix
-      run: echo "suffix=$(./versy-calver/suffix.sh)" >> $GITHUB_OUTPUT
+    - id: calver
+      run: |
+        OUTPUT=$(curl -sSL https://raw.githubusercontent.com/astorDev/versy/maincalver/full.sh | sh)
+        echo "$OUTPUT"
+        VERSION=$(echo "$OUTPUT" | grep "VERSION is" | awk '{print $3}')
+        echo ""
+        echo "Extracted version '$VERSION' from previous output"
+        echo "version=$VERSION" >> $GITHUB_OUTPUT
       shell: bash
       env:
         BRANCH: ${{ github.ref_name }}
-        MAIN: ${{ inputs.main }}
-    - id: calver
-      run: echo "version=$(./versy-calver/calver/.sh)" >> $GITHUB_OUTPUT
-      shell: bash
-      env:
         RUN: ${{ github.run_number }}
-        SUFFIX: ${{ steps.suffix.outputs.suffix }}

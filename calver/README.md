@@ -14,10 +14,10 @@ Here's how it works:
 > Imagining today is 5th of March, 2024
 
 ```sh
-export BRANCH=feature/five && export SUFFIX=$(./suffix.sh) RUN=1 && echo $(./calver/.sh)
+export BRANCH=feature/five RUN=1 && echo $(./calver/full.sh)
 # 2024.103.105.1-feature-five
 
-export BRANCH=main && export SUFFIX=$(./suffix.sh) RUN=9 && echo $(./calver/.sh)
+export BRANCH=main RUN=9 && echo $(./calver/.sh)
 # 2024.103.105.9
 ```
 
