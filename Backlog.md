@@ -1,0 +1,26 @@
+- [ ] Marketplaced CalVer action
+    - [ ] Write full.sh script
+    - [ ] Test the action with full full.sh path
+    - [ ] Create a astorDev/calver repository
+    - [ ] Test astorDev/calver action with versy workflow
+    - [ ] Publish the action to the marketplace
+- [ ] Tutorial: "Creating custom GitHub action"
+    - [ ] Marketplace "Hey You!" action
+    - [ ] Write the article
+    - [ ] Convert & Publish to medium
+- [ ] Marketplaced NuGet action
+    - [ ] Test the action with full sh path
+    - [ ] Create a dedicated repository for the action
+    - [ ] Test the dedicated action with versy workflow
+    - [ ] Publish the action to the marketplace
+- [ ] Marketplaced Nuget-CalVer action
+    - [ ] Write full.sh script
+    - [ ] Test the action with full full.sh path
+    - [ ] Create a astorDev/nuget-calver repository
+    - [ ] Test astorDev/nuget-calver action with versy workflow
+    - [ ] Publish the action to the marketplace
+    - [ ] Update Astor.Logging to use astorDev/nuget-calver
+- [ ] README reflecting actions distributed nature
+- [ ] Tutorial: "Publish NuGet package with GitHub actions"
+    - [ ] Write based on Nuget (Calver as bonus) action
+    - [ ] Convert & Publish to medium
