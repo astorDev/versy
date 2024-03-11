@@ -11,7 +11,7 @@ if [ "$BRANCH" = "$MAIN" ]; then
     echo "Branch is main - no suffix"
     echo "SUFFIX="
 else
-    echo "Branch is not main - replacing / with - and adding - as suffix"
-    NORMALIZED=${BRANCH//\//-}
-    echo "SUFFIX=-$NORMALIZED"
+    echo "Branch '$BRANCH' is not main - calculating suffix..."
+    #NORMALIZED=${BRANCH//\//-}
+    #echo "SUFFIX=-$NORMALIZED"
 fi
