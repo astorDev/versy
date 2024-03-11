@@ -6,7 +6,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - id: version
-        uses: astorDev/versy/calver@main
+        uses: astorDev/versy/calver@powerful-calver
       - run: |
           if [ "${{ steps.version.outputs.version }}" = "" ]; then
             echo "No version found"
