@@ -12,6 +12,6 @@ if [ "$BRANCH" = "$MAIN" ]; then
     echo "SUFFIX="
 else
     echo "Branch '$BRANCH' is not main - calculating suffix..."
-    NORMALIZED=${BRANCH//\//-}
+    NORMALIZED=$(echo "$BRANCH" | sed 's/\//-/g')
     #echo "SUFFIX=-$NORMALIZED"
 fi
