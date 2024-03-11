@@ -9,5 +9,5 @@ export SUFFIX=$(echo "$SUFFIX_OUTPUT" | grep 'SUFFIX is' | awk '{print $3}')
 echo "SUFFIX is '$SUFFIX'"
 echo ""
 curl -sSL https://raw.githubusercontent.com/astorDev/versy/powerful-calver/calver/.sh | sh
-VERSION_OUTPUT=$(curl -sSL https://raw.githubusercontent.com/astorDev/versy/powerful-calver/calver/.sh | sh)
-echo "$VERSION_OUTPUT"
+# VERSION_OUTPUT=$(curl -sSL https://raw.githubusercontent.com/astorDev/versy/powerful-calver/calver/.sh | sh)
+# echo "$VERSION_OUTPUT"
