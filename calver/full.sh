@@ -1,6 +1,5 @@
 #!/bin/sh
 echo "Starting calver script (BRANCH='$BRANCH', MAIN='$MAIN', RUN='$RUN')"
-printf "Calculating suffix..."
 
 # if [ "$BRANCH" = "" ]; then
 #     echo "Required variable BRANCH is empty. exiting..."
@@ -24,7 +23,9 @@ printf "Calculating suffix..."
 # NORMALIZED=$(echo "$BRANCH" | sed 's/\//-/g')
 # echo "Normalized ($NORMALIZED)"
 
-curl -sSL https://raw.githubusercontent.com/astorDev/versy/powerful-calver/suffix.sh | sh
+suffix_output=$(curl -sSL https://raw.githubusercontent.com/astorDev/versy/powerful-calver/suffix.sh | sh)
+echo $suffix_output
+
 # export SUFFIX=$(curl -sSL https://raw.githubusercontent.com/astorDev/versy/powerful-calver/suffix.sh | sh)
 # echo "Suffix is '$SUFFIX'"
 # echo "Calculating version..."
