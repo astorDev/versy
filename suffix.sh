@@ -1,9 +1,12 @@
+echo "Calculating suffix (BRANCH=$BRANCH, MAIN=$MAIN)"
+
 if [ "$BRANCH" = "" ]; then
     echo "Required variable BRANCH is empty. exiting..."
     exit 1
 fi
 
 if [ "${MAIN}" = "" ]; then
+    echo "MAIN is empty - assigning default value 'main'"
     MAIN="main"
 fi
 
