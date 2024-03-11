@@ -5,7 +5,7 @@ SUFFIX_OUTPUT=$(curl -sSL https://raw.githubusercontent.com/astorDev/versy/power
 echo "$SUFFIX_OUTPUT"
 echo ""
 echo "Extracting SUFFIX from output..."
-SUFFIX=$(echo "$SUFFIX_OUTPUT" | grep 'SUFFIX is' | awk '{print $3}')
+export SUFFIX=$(echo "$SUFFIX_OUTPUT" | grep 'SUFFIX is' | awk '{print $3}')
 echo "SUFFIX is '$SUFFIX'"
 echo ""
 curl -sSL https://raw.githubusercontent.com/astorDev/versy/powerful-calver/calver/.sh | sh
