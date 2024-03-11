@@ -27,7 +27,7 @@ runs:
       run: |
         OUTPUT=$(curl -sSL https://raw.githubusercontent.com/astorDev/versy/powerful-calver/calver/full.sh | sh)
         echo "$OUTPUT"
-        VERSION=$("$OUTPUT" | grep "VERSION is" | awk '{print $3}')
+        VERSION=$(echo "$OUTPUT" | grep "VERSION is" | awk '{print $3}')
         echo "Extracted version is '$VERSION'"
         echo "version=$VERSION" >> $GITHUB_ENV
       shell: bash
