@@ -29,7 +29,7 @@ runs:
         echo "$OUTPUT"
         VERSION=$(echo "$OUTPUT" | grep "VERSION is" | awk '{print $3}')
         echo "Extracted version is '$VERSION'"
-        echo "version=$VERSION" >> $GITHUB_ENV
+        echo "version=$VERSION" >> $GITHUB_OUTPUT
       shell: bash
       env:
         BRANCH: ${{ github.ref_name }}
