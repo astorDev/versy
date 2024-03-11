@@ -28,7 +28,8 @@ runs:
         OUTPUT=$(curl -sSL https://raw.githubusercontent.com/astorDev/versy/powerful-calver/calver/full.sh | sh)
         echo "$OUTPUT"
         VERSION=$("$OUTPUT" | grep "VERSION is" | awk '{print $3}')
-        echo "version=$OUTPUT" >> $GITHUB_ENV
+        echo "Extracted version is '$VERSION'"
+        echo "version=$VERSION" >> $GITHUB_ENV
       shell: bash
       env:
         BRANCH: ${{ github.ref_name }}
