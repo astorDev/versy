@@ -20,6 +20,10 @@ printf "Calculating suffix..."
 #     #echo "SUFFIX=-$NORMALIZED"
 # fi
 
+echo "Checking normalization"
+NORMALIZED=$(echo "$BRANCH" | sed 's/\//-/g')
+echo "Normalized ($NORMALIZED)"
+
 curl -sSL https://raw.githubusercontent.com/astorDev/versy/powerful-calver/suffix.sh | sh
 # export SUFFIX=$(curl -sSL https://raw.githubusercontent.com/astorDev/versy/powerful-calver/suffix.sh | sh)
 # echo "Suffix is '$SUFFIX'"
