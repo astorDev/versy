@@ -1,6 +1,6 @@
 - [ ] Marketplaced CalVer action
-    - [ ] Write full.sh script
-    - [ ] Test the action with full full.sh path
+    - [x] Write full.sh script
+    - [x] Test the action with full full.sh path
     - [ ] Create a astorDev/calver repository
     - [ ] Test astorDev/calver action with versy workflow
     - [ ] Publish the action to the marketplace
