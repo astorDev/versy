@@ -1,0 +1,16 @@
+name: 'Concerts'
+description: 'Plays concert songs and returns them'
+
+outputs:
+  songs:
+    description: 'The played songs'
+    value: ${{ steps.concert.outputs.songs }}
+runs:
+  using: "composite"
+  steps:
+    - uses: actions/checkout@v4
+    - id: concert
+      run: |
+        cd sharch
+        echo "songs=$(sh ./concert.sh)" >> $GITHUB_OUTPUT
+      shell: bash

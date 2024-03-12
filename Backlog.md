@@ -1,3 +1,5 @@
+- [ ] Bash scripts Architecture
+    - [ ] Write a note about .sh scripts coordination architecture
 - [ ] Marketplaced CalVer action
     - [x] Write full.sh script
     - [x] Test the action with full full.sh path
