@@ -47,7 +47,7 @@ nuget() {
     dotnet nuget push $PROJECT_NAME.$VERSION.nupkg -s $NUGET_SOURCE -k $NUGET_API_KEY
 }
 
-calver-nuget() {
+calver_nuget() {
     calver
     nuget
 }
