@@ -37,6 +37,7 @@ calver() {
 }
 
 ACTION=${1}
+echo "Executing action '$ACTION'"
 
 case $ACTION in
     "suffix")
