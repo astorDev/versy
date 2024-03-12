@@ -15,6 +15,7 @@ jobs:
     steps:
       - run: curl -sSL https://raw.githubusercontent.com/astorDev/versy/${{ github.ref_name }}/.sh | sh -s calver-absolute
         env:
+          SOURCING_URL: https://raw.githubusercontent.com/astorDev/versy/${{ github.ref_name }}
           BRANCH: ${{ github.ref_name }}
           RUN: ${{ github.run_number }}
   nuget:

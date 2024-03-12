@@ -1,7 +1,13 @@
 #! /bin/bash
 
 source() {
-    . ./$1.sh
+    if [ "$SOURCING_URL" = "" ]; then
+        echo "Sourcing ./$1.sh by relative path"
+        . ./$1.sh
+    else
+        echo "Sourcing $SOURCING_URL/$1.sh"
+        . <(curl -s $SOURCING_URL/$1.sh)
+    fi
 }
 
 source suffix
