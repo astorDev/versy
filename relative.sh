@@ -1,6 +1,6 @@
 #! /bin/bash
 
-source ./suffix.sh
+. suffix.sh
 
 calver() {
     suffix
