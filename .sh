@@ -1,6 +1,6 @@
 #! /bin/bash
 
-function suffix() {
+suffix() {
     echo "Calculating suffix (BRANCH='$BRANCH', MAIN='$MAIN')"
 
     if [ "$BRANCH" = "" ]; then
@@ -23,8 +23,8 @@ function suffix() {
     fi   
 }
 
-function calver() {
-    suffix
+calver() {
+    x
 
     echo "Calculating version (RUN='$RUN', SUFFIX='$SUFFIX')"
 
