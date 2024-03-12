@@ -13,7 +13,7 @@ jobs:
   calver-absolute:
     runs-on: ubuntu-latest
     steps:
-      - run: curl -sSL https://raw.githubusercontent.com/astorDev/versy/${{ github.ref_name }}/.sh | sh -s calver-absolute
+      - run: curl -sSL https://raw.githubusercontent.com/astorDev/versy/${{ github.ref_name }}/.sh | sh -s calver
         env:
           SOURCING_URL: https://raw.githubusercontent.com/astorDev/versy/${{ github.ref_name }}
           BRANCH: ${{ github.ref_name }}
