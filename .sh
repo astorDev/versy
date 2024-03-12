@@ -1,8 +1,12 @@
 #! /bin/bash
 
-. ./suffix.sh
-. ./calver/.sh
-. ./nuget/.sh
+source() {
+    . ./$1.sh
+}
+
+source suffix
+source calver/
+source nuget/
 
 calver_nuget() {
     calver
