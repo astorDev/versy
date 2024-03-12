@@ -1,0 +1,13 @@
+on:
+  push:
+      
+jobs:
+  calver:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: sh .sh calver
+        env:
+          BRANCH: ${{ github.ref_name }}
+          RUN: ${{ github.run_number }}
+          

@@ -1,4 +1,6 @@
-- [ ] Bash scripts Architecture
+- [ ] Talkative Scripts Architecture
+    - [x] Solve logging and return value problem
+    - [ ] Solve relative path problem
     - [ ] Write a note about .sh scripts coordination architecture
 - [ ] Marketplaced CalVer action
     - [x] Write full.sh script
