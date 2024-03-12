@@ -15,12 +15,14 @@ suffix() {
 
     if [ "$BRANCH" = "$MAIN" ]; then
         echo "This is main branch suffix is empty"
-        echo "SUFFIX is"
+        SUFFIX=""
     else
         echo "Branch '$BRANCH' is not main - calculating suffix..."
         NORMALIZED=$(echo "$BRANCH" | sed 's/\//-/g')
-        echo "SUFFIX is -$NORMALIZED"
+        SUFFIX=$NORMALIZED
     fi   
+
+    echo "Calculated suffix: $SUFFIX"
 }
 
 calver() {
@@ -34,6 +36,7 @@ calver() {
     fi
 
     VERSION=$(date +'%Y.1%m.1%d').$RUN$SUFFIX
+    echo "Calculated version: $VERSION"
 }
 
 ACTION=${1}
