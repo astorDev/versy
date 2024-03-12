@@ -5,7 +5,7 @@ source() {
         echo "Sourcing ./$1.sh by relative path"
         . ./$1.sh
     else
-        echo "Executing curl -sSL "$SOURCING_URL/$1.sh" > ./x.sh)"
+        echo "Sourcing $SOURCING_URL/$1.sh"
         curl -sSL "$SOURCING_URL/$1.sh" > ./x.sh
         . ./x.sh
     fi
