@@ -12,11 +12,13 @@ suffix() {
     fi
 
     if [ "$BRANCH" = "$MAIN" ]; then
-        echo "This is main branch suffix is empty"
-        echo "SUFFIX is"
+        echo "Current branch is main. No suffix needed."
+        SUFFIX=""
     else
         echo "Branch '$BRANCH' is not main - calculating suffix..."
         NORMALIZED=$(echo "$BRANCH" | sed 's/\//-/g')
-        echo "SUFFIX is -$NORMALIZED"
+        SUFFIX="-$NORMALIZED"
     fi
+
+    echo "Result suffix is '$SUFFIX'"
 }
