@@ -24,7 +24,7 @@ suffix() {
 }
 
 calver() {
-    x
+    suffix
 
     echo "Calculating version (RUN='$RUN', SUFFIX='$SUFFIX')"
 
