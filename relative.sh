@@ -52,4 +52,6 @@ calver_nuget() {
     nuget
 }
 
-sh ./executor.sh $1
+ACTION=${1}
+echo "Executing action '$ACTION'"
+$ACTION
