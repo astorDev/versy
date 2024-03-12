@@ -18,8 +18,8 @@ suffix() {
         SUFFIX=""
     else
         echo "Branch '$BRANCH' is not main - calculating suffix..."
-        NORMALIZED=$(echo "$BRANCH" | sed 's/\//-/g')
-        SUFFIX=$NORMALIZED
+        NORMALIZED_BRANCH=$(echo "$BRANCH" | sed 's/\//-/g')
+        SUFFIX=-$NORMALIZED_BRANCH
     fi   
 
     echo "Calculated suffix: $SUFFIX"
