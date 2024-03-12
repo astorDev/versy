@@ -6,7 +6,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: sh .sh calver
+      - run: sh relative.sh calver
         env:
           BRANCH: ${{ github.ref_name }}
           RUN: ${{ github.run_number }}
@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: sh .sh nuget
+      - run: sh relative.sh nuget
         env:
           VERSION: 2.2.${{ github.run_number}}
           PROJECT: 'nuget/Versy.Nuget'
