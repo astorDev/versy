@@ -10,4 +10,12 @@ jobs:
         env:
           BRANCH: ${{ github.ref_name }}
           RUN: ${{ github.run_number }}
-          
+  nuget:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: sh .sh nuget
+        env:
+          VERSION: 2.2.${{ github.run_number}}
+          PROJECT: 'nuget/Versy.Nuget'
+          NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}
