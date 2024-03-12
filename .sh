@@ -6,7 +6,7 @@ source() {
         . ./$1.sh
     else
         echo "Sourcing $SOURCING_URL/$1.sh"
-        curl -sSL "$SOURCING_URL/$1.sh" | .
+        curl -sSL "$SOURCING_URL/$1.sh" > $1.sh
         # . ./$1.sh
     fi
 }
