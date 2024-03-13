@@ -1,3 +1,8 @@
+- [ ] Talkative Scripts Architecture
+    - [x] Solve logging and return value problem
+    - [x] Solve relative path problem
+    - [x] Write a note about .sh scripts coordination architecture
+    - [ ] Adjust solution according to the article
 - [ ] Marketplaced CalVer action
     - [x] Write full.sh script
     - [x] Test the action with full full.sh path

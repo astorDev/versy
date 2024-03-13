@@ -1,0 +1,29 @@
+on:
+  push:
+      
+jobs:
+  calver:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: sh .sh calver
+        env:
+          BRANCH: ${{ github.ref_name }}
+          RUN: ${{ github.run_number }}
+  calver-absolute:
+    runs-on: ubuntu-latest
+    steps:
+      - run: curl -sSL https://raw.githubusercontent.com/astorDev/versy/${{ github.ref_name }}/.sh | sh -s calver
+        env:
+          SOURCING_URL: https://raw.githubusercontent.com/astorDev/versy/${{ github.ref_name }}
+          BRANCH: ${{ github.ref_name }}
+          RUN: ${{ github.run_number }}
+  nuget:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: sh .sh nuget
+        env:
+          VERSION: 2.2.${{ github.run_number}}
+          PROJECT: 'nuget/Versy.Nuget'
+          NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}
