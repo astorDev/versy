@@ -8,7 +8,7 @@
             - [x] Locally
             - [x] Remotely via GitHub action
             - [x] Via custom GitHub action
-    - [ ] Finalize architecture
+    - [x] Finalize architecture
         - [x] Cleanup folder
         - [x] Test remote calls scripts
         - [x] Update remote calls scripts in article
