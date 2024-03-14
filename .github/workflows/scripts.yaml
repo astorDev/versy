@@ -20,9 +20,7 @@ jobs:
   nuget:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - run: sh .sh nuget
+      - run: curl -sSL $SOURCING_URL/.sh | sh -s nuget
         env:
-          VERSION: 2.2.${{ github.run_number}}
-          PROJECT: 'nuget/Versy.Nuget'
-          NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}
+          SOURCING_URL: https://raw.githubusercontent.com/astorDev/versy/${{ github.ref_name }}
+          VERSION: 2.2.${{ github.run_number }}
