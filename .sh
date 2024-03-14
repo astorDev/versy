@@ -1,7 +1,9 @@
 #! /bin/bash
 
 log() {
-    echo "log:"
+    RED='\033[0;31m'
+    NC='\033[0m'
+    echo "${RED}Logs:${NC}"
     echo >&2 $1
 }
 
