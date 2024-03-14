@@ -17,10 +17,10 @@ ret() {
 
 sourcing() {
     if [ "$SOURCING_URL" = "" ]; then
-        echo "Sourcing ./$1.sh by relative path"
+        log "Sourcing ./$1.sh by relative path"
         . ./$1.sh
     else
-        echo "Sourcing $SOURCING_URL/$1.sh"
+        log "Sourcing $SOURCING_URL/$1.sh"
         curl -sSL "$SOURCING_URL/$1.sh" > ./x.sh
         . ./x.sh
     fi
