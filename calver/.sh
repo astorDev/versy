@@ -12,6 +12,6 @@ calver_assigned() {
 }
 
 calver() {
-    suffix
+    SUFFIX=$(suffix)
     calver_assigned
 }

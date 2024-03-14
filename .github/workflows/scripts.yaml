@@ -12,15 +12,7 @@ jobs:
   calver:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - run: sh .sh calver
-        env:
-          BRANCH: ${{ github.ref_name }}
-          RUN: ${{ github.run_number }}
-  calver-absolute:
-    runs-on: ubuntu-latest
-    steps:
-      - run: curl -sSL https://raw.githubusercontent.com/astorDev/versy/${{ github.ref_name }}/.sh | sh -s calver
+      - run: curl -sSL $SOURCING_URL/.sh | sh -s calver
         env:
           SOURCING_URL: https://raw.githubusercontent.com/astorDev/versy/${{ github.ref_name }}
           BRANCH: ${{ github.ref_name }}
