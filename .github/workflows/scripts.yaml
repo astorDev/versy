@@ -20,6 +20,7 @@ jobs:
   nuget:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v4
       - run: curl -sSL $SOURCING_URL/.sh | sh -s nuget
         env:
           SOURCING_URL: https://raw.githubusercontent.com/astorDev/versy/${{ github.ref_name }}
