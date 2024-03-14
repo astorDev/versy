@@ -2,8 +2,9 @@
 
 log() {
     RED='\033[0;31m'
+    LIGHT_CYAN='\033[0;31m'
     NC='\033[0m'
-    echo >&2 "${RED}${1}${NC}"
+    echo >&2 "${LIGHT_CYAN}${1}${NC}"
 }
 
 throw() {
@@ -36,5 +37,5 @@ calver_nuget() {
 }
 
 ACTION=${1}
-echo "Executing action '$ACTION'"
+log "Executing action '$ACTION'"
 $ACTION
