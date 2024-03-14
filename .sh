@@ -3,7 +3,7 @@
 log() {
     RED='\033[0;31m'
     NC='\033[0m'
-    echo >&2 "${RED}Logs:${NC} ${1}"
+    echo >&2 "${RED}${1}${NC}"
 }
 
 throw() {
