@@ -1,4 +1,4 @@
-- [ ] Talkative Scripts Architecture
+- [x] Talkative Scripts Architecture
     - [x] Solve logging and return value problem
     - [x] Solve relative path problem
     - [x] Write a note about .sh scripts coordination architecture
@@ -8,11 +8,11 @@
             - [x] Locally
             - [x] Remotely via GitHub action
             - [x] Via custom GitHub action
-    - [ ] Finalize architecture
-        - [ ] Cleanup folder
-        - [ ] Test remote calls scripts
-        - [ ] Update remote calls scripts in article
-        - [ ] Fix grammar and similar in article
+    - [x] Finalize architecture
+        - [x] Cleanup folder
+        - [x] Test remote calls scripts
+        - [x] Update remote calls scripts in article
+        - [x] Fix grammar and style in the article
 - [ ] Marketplaced Action
     - [ ] Pick an action for tutorial
     - [ ] Marketplace the action

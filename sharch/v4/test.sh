@@ -1,1 +1,0 @@
-export BRANCH=feature/one RUN=99 && sh .sh calver
