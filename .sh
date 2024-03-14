@@ -2,7 +2,7 @@
 
 log() {
     RED='\033[0;31m'
-    LIGHT_CYAN='\033[1;32m'
+    local LIGHT_CYAN='\033[1;32m'
     NC='\033[0m'
     echo >&2 "${LIGHT_CYAN}${1}${NC}"
 }
