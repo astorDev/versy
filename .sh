@@ -8,8 +8,7 @@ log() {
 }
 
 throw() {
-    echo >&2 "${RED}Error Occurred${NC}"
-    echo >&2 "${RED}${1}${NC}"
+    echo >&2 "${RED}${1}. Exiting...${NC}"
     exit 1
 }
 

@@ -1,10 +1,10 @@
 nuget() {
     if [ "$VERSION" = "" ]; then
-        throw "Required variable VERSION is empty. exiting..."
+        throw "Required variable VERSION is empty"
     fi
 
     if [ "$PROJECT" = "" ]; then
-        throw "Required variable PROJECT is empty. exiting..."
+        throw "Required variable PROJECT is empty"
     fi
 
     if [ "$NUGET_API_KEY" = "" ]; then
