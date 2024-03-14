@@ -1,7 +1,7 @@
 #! /bin/bash
 
 log() {
-    echo "\e[1;34log\e[0m"
+    echo "log:"
     echo >&2 $1
 }
 
