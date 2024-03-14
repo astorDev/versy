@@ -19,13 +19,13 @@ inputs:
 runs:
   using: "composite"
   steps:
-    - id: version
-      uses: astorDev/versy/calver@main
-      with:
-        main: ${{ inputs.main }}
-    - uses: astorDev/versy/nuget@main
-      with:
-        version: ${{ steps.version.outputs.version }}
-        project: ${{ inputs.project }}
-        nuget_api_key: ${{ inputs.nuget_api_key }}
-        nuget_source: ${{ inputs.nuget_source }}
+    - uses: actions/checkout@v4 # for the csproj
+    - run: curl -sSL $SOURCING_URL/.sh | sh -s calver_nuget
+      shell: bash
+      env:
+        SOURCING_URL: https://raw.githubusercontent.com/astorDev/versy/${{ github.ref_name }}
+        BRANCH: ${{ github.ref_name }}
+        RUN: ${{ github.run_number }}
+        MAIN: ${{ inputs.main }}
+        PROJECT: ${{ inputs.project }}
+        NUGET_API_KEY: ${{ inputs.nuget_api_key }}

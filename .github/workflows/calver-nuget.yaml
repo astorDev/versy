@@ -16,10 +16,10 @@ jobs:
           RUN: ${{ github.run_number }}
           PROJECT: 'nuget/Versy.Nuget'
           NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}
-  publish_calver_nuget:
+  custom_action:
     runs-on: ubuntu-latest
     steps:
-      - uses: astorDev/versy/calver/nuget@main
+      - uses: astorDev/versy/calver/nuget@architecture-cleanup
         with:
           project: 'nuget/Versy.Nuget'
           nuget_api_key: ${{ secrets.NUGET_API_KEY }}
