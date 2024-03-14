@@ -11,6 +11,19 @@ source() {
     fi
 }
 
+log() {
+    echo >&2 $1
+}
+
+throw() {
+    echo >&2 $1
+    exit 1
+}
+
+ret() {
+    echo $1
+}
+
 source suffix/
 source calver/
 source nuget/
