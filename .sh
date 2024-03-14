@@ -1,7 +1,7 @@
 #! /bin/bash
 
 log() {
-    echo >&2 $1
+    echo >&2 "\e[1;34m$1\e[0m"
 }
 
 throw() {
@@ -13,7 +13,7 @@ ret() {
     echo $1
 }
 
-source() {
+sourcing() {
     if [ "$SOURCING_URL" = "" ]; then
         echo "Sourcing ./$1.sh by relative path"
         . ./$1.sh
@@ -24,9 +24,9 @@ source() {
     fi
 }
 
-source suffix/
-source calver/
-source nuget/
+sourcing suffix/
+sourcing calver/
+sourcing nuget/
 
 calver_nuget() {
     calver
