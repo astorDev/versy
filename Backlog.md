@@ -2,17 +2,17 @@
     - [x] Solve logging and return value problem
     - [x] Solve relative path problem
     - [x] Write a note about .sh scripts coordination architecture
-    - [ ] Adjust Scripts
+    - [x] Adjust Scripts
         - [x] Apply new architecture to scripts
-        - [ ] Test CalVer-Nuget
+        - [x] Test CalVer-Nuget
             - [x] Locally
-            - [ ] Remotely via GitHub action
-            - [ ] Via custom GitHub action
+            - [x] Remotely via GitHub action
+            - [x] Via custom GitHub action
     - [ ] Finalize architecture
+        - [ ] Cleanup folder
         - [ ] Test remote calls scripts
         - [ ] Update remote calls scripts in article
         - [ ] Fix grammar and similar in article
-        - [ ] Cleanup folder
 - [ ] Marketplaced Action
     - [ ] Pick an action for tutorial
     - [ ] Marketplace the action
