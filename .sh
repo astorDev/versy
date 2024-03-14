@@ -1,7 +1,8 @@
 #! /bin/bash
 
 log() {
-    echo >&2 "\e[1;34m$1\e[0m"
+    echo "\e[1;34log\e[0m"
+    echo >&2 $1
 }
 
 throw() {
