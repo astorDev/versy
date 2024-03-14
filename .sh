@@ -1,7 +1,7 @@
 #! /bin/bash
 
 log() {
-    LIGHT_CYAN='\033[1;34m'
+    LIGHT_CYAN='\033[1;36m'
     NC='\033[0m'
     echo >&2 "${LIGHT_CYAN}${1}${NC}"
 }
