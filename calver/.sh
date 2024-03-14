@@ -12,6 +12,8 @@ calver_assigned() {
 }
 
 calver() {
+    echo >&2 "Calling suffix calculation"
     SUFFIX=$(suffix)
+    echo >&2 "Suffix is calculated"
     calver_assigned
 }
