@@ -2,30 +2,29 @@
     - [x] Solve logging and return value problem
     - [x] Solve relative path problem
     - [x] Write a note about .sh scripts coordination architecture
-    - [ ] Adjust solution according to the article
-- [ ] Marketplaced CalVer action
-    - [x] Write full.sh script
-    - [x] Test the action with full full.sh path
-    - [ ] Create a astorDev/calver repository
-    - [ ] Test astorDev/calver action with versy workflow
-    - [ ] Publish the action to the marketplace
-- [ ] Tutorial: "Creating custom GitHub action"
-    - [ ] Marketplace "Hey You!" action
-    - [ ] Write the article
-    - [ ] Convert & Publish to medium
-- [ ] Marketplaced NuGet action
-    - [ ] Test the action with full sh path
-    - [ ] Create a dedicated repository for the action
-    - [ ] Test the dedicated action with versy workflow
-    - [ ] Publish the action to the marketplace
-- [ ] Marketplaced Nuget-CalVer action
-    - [ ] Write full.sh script
-    - [ ] Test the action with full full.sh path
-    - [ ] Create a astorDev/nuget-calver repository
-    - [ ] Test astorDev/nuget-calver action with versy workflow
-    - [ ] Publish the action to the marketplace
-    - [ ] Update Astor.Logging to use astorDev/nuget-calver
-- [ ] README reflecting actions distributed nature
-- [ ] Tutorial: "Publish NuGet package with GitHub actions"
-    - [ ] Write based on Nuget (Calver as bonus) action
-    - [ ] Convert & Publish to medium
+    - [ ] Adjust Scripts
+        - [x] Apply new architecture to scripts
+        - [ ] Test CalVer-Nuget
+            - [x] Locally
+            - [ ] Remotely via GitHub action
+            - [ ] Via custom GitHub action
+    - [ ] Finalize architecture
+        - [ ] Test remote calls scripts
+        - [ ] Update remote calls scripts in article
+        - [ ] Fix grammar and similar in article
+        - [ ] Cleanup folder
+- [ ] Marketplaced Action
+    - [ ] Pick an action for tutorial
+    - [ ] Marketplace the action
+    - [ ] Write an article
+    - [ ] Marketplace CalVer
+    - [ ] Marketplace Nuget
+    - [ ] Marketplace Nuget-Calver
+- [ ] Repository Security
+- [ ] Publication
+    - [ ] Update README
+    - [ ] Publish Shell architecture article
+    - [ ] Publish Marketplacing article
+    - [ ] Write NuGet GitHub action article
+    - [ ] Publish Nuget GitHub action article
+    - [ ] Update README with Medium links

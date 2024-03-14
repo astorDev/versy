@@ -1,7 +1,20 @@
 on:
   push:
-      
+    paths:
+      - '.github/workflows/calver-nuget.yaml'
+      - 'calver/nuget/**'
+      - '.sh'
 jobs:
+  remote_call:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4 # for the csproj
+      - run: curl -sSL $SOURCING_URL/.sh | sh -s calver_nuget
+        env:
+          SOURCING_URL: https://raw.githubusercontent.com/astorDev/versy/${{ github.ref_name }}
+          VERSION: 2.4.${{ github.run_number }}
+          PROJECT: 'nuget/Versy.Nuget'
+          NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}
   publish_calver_nuget:
     runs-on: ubuntu-latest
     steps:
