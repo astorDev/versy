@@ -24,3 +24,5 @@ jobs:
         env:
           SOURCING_URL: https://raw.githubusercontent.com/astorDev/versy/${{ github.ref_name }}
           VERSION: 2.2.${{ github.run_number }}
+          PROJECT: ${{ secrets.NUGET_API_KEY }}
+          NUGET_API_KEY: ${{ inputs.nuget_api_key }}
