@@ -29,3 +29,4 @@ runs:
         MAIN: ${{ inputs.main }}
         PROJECT: ${{ inputs.project }}
         NUGET_API_KEY: ${{ inputs.nuget_api_key }}
+        NUGET_SOURCE: ${{ inputs.nuget_source }}
