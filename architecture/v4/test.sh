@@ -1,1 +1,2 @@
 export BRANCH=feature/one RUN=99 && sh .sh calver
+export BRANCH=feature/one RUN=99 SOURCING_URL=https://raw.githubusercontent.com/astorDev/versy/architecture-revisit/architecture/v4 && curl -sSL ${SOURCING_URL}/.sh | sh -s calver

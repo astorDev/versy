@@ -9,9 +9,9 @@
             - [x] Remotely via GitHub action
             - [x] Via custom GitHub action
     - [ ] Finalize architecture
-        - [ ] Cleanup folder
-        - [ ] Test remote calls scripts
-        - [ ] Update remote calls scripts in article
+        - [x] Cleanup folder
+        - [x] Test remote calls scripts
+        - [x] Update remote calls scripts in article
         - [ ] Fix grammar and similar in article
 - [ ] Marketplaced Action
     - [ ] Pick an action for tutorial
