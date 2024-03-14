@@ -2,6 +2,13 @@ on:
   push:
       
 jobs:
+  suffix:
+    runs-on: ubuntu-latest
+    steps:
+      - run: curl -sSL $SOURCING_URL/.sh | sh -s suffix
+        env:
+          SOURCING_URL: https://raw.githubusercontent.com/astorDev/versy/${{ github.ref_name }}
+          BRANCH: ${{ github.ref_name }}
   calver:
     runs-on: ubuntu-latest
     steps:

@@ -11,7 +11,7 @@ source() {
     fi
 }
 
-source suffix
+source suffix/
 source calver/
 source nuget/
 
