@@ -13,7 +13,7 @@ jobs:
         env:
           SOURCING_URL: https://raw.githubusercontent.com/astorDev/versy/${{ github.ref_name }}
           BRANCH: ${{ github.ref_name }}
-          VERSION: 2.4.${{ github.run_number }}
+          RUN: ${{ github.run_number }}
           PROJECT: 'nuget/Versy.Nuget'
           NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}
   publish_calver_nuget:
