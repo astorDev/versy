@@ -1,0 +1,1 @@
+export BRANCH="A$(uuidgen)" RUN=1 PROJECT=nuget/Versy.Nuget && sh .sh calver_nuget

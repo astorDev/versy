@@ -1,30 +1,27 @@
 nuget() {
     if [ "$VERSION" = "" ]; then
-        echo "Required variable VERSION is empty. exiting..."
-        exit 1
+        throw "Required variable VERSION is empty"
     fi
 
     if [ "$PROJECT" = "" ]; then
-        echo "Required variable PROJECT is empty. exiting..."
-        exit 1
+        throw "Required variable PROJECT is empty"
     fi
 
     if [ "$NUGET_API_KEY" = "" ]; then
-        echo "Required variable NUGET_API_KEY is empty"
-        exit 1
+        throw "Required variable NUGET_API_KEY is empty"
     fi
 
     if [ "$NUGET_SOURCE" = "" ]; then
-        echo "Setting NUGET_SOURCE to default value 'https://api.nuget.org/v3/index.json'"
+        log "Setting NUGET_SOURCE to default value 'https://api.nuget.org/v3/index.json'"
         NUGET_SOURCE="https://api.nuget.org/v3/index.json"
     fi
 
-    echo "Packing project with: 'dotnet pack ./$PROJECT.csproj /p:PackageVersion=$VERSION -o ./'"
+    log "Packing project with: 'dotnet pack ./$PROJECT.csproj /p:PackageVersion=$VERSION -o ./'"
     dotnet pack ./$PROJECT.csproj /p:PackageVersion=$VERSION -o ./
 
-    echo "Extracting project name with: 'PROJECT_NAME=\${PROJECT##*/}'"
+    log "Extracting project name with: 'PROJECT_NAME=\${PROJECT##*/}'"
     PROJECT_NAME=${PROJECT##*/}
 
-    echo "Publishing package with: 'dotnet nuget push $PROJECT_NAME.$VERSION.nupkg -s $NUGET_SOURCE -k $NUGET_API_KEY'"
+    log "Publishing package with: 'dotnet nuget push $PROJECT_NAME.$VERSION.nupkg -s $NUGET_SOURCE -k $NUGET_API_KEY'"
     dotnet nuget push $PROJECT_NAME.$VERSION.nupkg -s $NUGET_SOURCE -k $NUGET_API_KEY
 }
