@@ -28,6 +28,6 @@ runs:
       env:
         VERSION: ${{ inputs.version }}
         PROJECT: ${{ inputs.project }}
-        NUGET_API_KEY: ${{ inputs.nuget_api_key }}
+        NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}
         NUGET_SOURCE: ${{ inputs.nuget_source }}
       run: sh ./versy-nuget/nuget/.sh
