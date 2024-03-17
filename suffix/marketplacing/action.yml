@@ -15,7 +15,7 @@ runs:
   steps:
     - id: suffix
       run: | 
-        SUFFIX=($curl -sSL https://raw.githubusercontent.com/astorDev/versy/${SCRIPT_BRANCH}/suffix/marketplacing/.sh | sh)
+        SUFFIX=$(curl -sSL https://raw.githubusercontent.com/astorDev/versy/${SCRIPT_BRANCH}/suffix/marketplacing/.sh | sh)
         echo "suffix=$SUFFIX" >> $GITHUB_OUTPUT
       shell: bash
       env:
