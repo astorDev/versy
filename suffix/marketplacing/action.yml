@@ -1,0 +1,23 @@
+name: 'Suffix'
+description: 'Generate Suffix based on the current branch'
+
+inputs:
+  script_branch:
+    description: 'Name of the branch in suffix repository'
+    required: false
+    default: 'main'
+outputs:
+  suffix:
+    description: 'The generated suffix'
+    value: ${{ steps.suffix.outputs.suffix }}
+runs:
+  using: "composite"
+  steps:
+    - id: suffix
+      run: | 
+        SUFFIX=($curl -sSL https://raw.githubusercontent.com/astorDev/versy/$SCRIPT_BRANCH/suffix/marketplacing/.sh | sh)
+        echo "suffix=$SUFFIX" >> $GITHUB_OUTPUT
+      shell: bash
+      env:
+        SCRIPT_BRANCH: ${{ inputs.script_branch }}
+        BRANCH: ${{ github.ref_name }}
