@@ -14,8 +14,8 @@
         - [x] Update remote calls scripts in article
         - [x] Fix grammar and style in the article
 - [ ] Marketplaced Action
-    - [ ] Pick an action for tutorial
-    - [ ] Marketplace the action
+    - [x] Setup a tutorial action folder structure
+    - [ ] Marketplace Suffix action
     - [ ] Write an article
     - [ ] Marketplace CalVer
     - [ ] Marketplace Nuget
