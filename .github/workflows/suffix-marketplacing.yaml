@@ -1,0 +1,20 @@
+on:
+  push:
+    paths:
+      - '.github/workflows/suffix-marketplacing.yaml'
+      - 'suffix/marketplacing/**'
+jobs:
+  remote_call:
+    runs-on: ubuntu-latest
+    steps:
+      - run: curl -sSL https://raw.githubusercontent.com/astorDev/versy/$BRANCH/suffix/marketplacing/.sh | sh
+        env:
+          BRANCH: ${{ github.ref_name }}
+  local_action:
+    runs-on: ubuntu-latest
+    steps:
+      - id: suffix 
+        uses: astorDev/versy/suffix/marketplacing@marketplacing_suffix
+        with:
+          script_branch: ${{ github.ref_name }}
+      - run: echo "Suffix is '${{ steps.suffix.outputs.suffix }}'"
