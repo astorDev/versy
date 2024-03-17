@@ -1,8 +1,8 @@
 on:
   push:
     paths:
-      - '.github/workflows/suffix.yaml'
-      - 'suffix/**'
+      - '.github/workflows/suffix-marketplacing.yaml'
+      - 'suffix/marketplacing/**'
 jobs:
   remote_call:
     runs-on: ubuntu-latest
