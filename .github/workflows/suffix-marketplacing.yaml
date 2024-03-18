@@ -18,7 +18,7 @@ jobs:
         with:
           script-branch: ${{ github.ref_name }}
       - run: echo "Suffix is '${{ steps.suffix.outputs.suffix }}'"
-  marketplaced-action:
+  marketplace-action:
     runs-on: ubuntu-latest
     steps:
       - id: suffix
