@@ -4,17 +4,23 @@ on:
       - '.github/workflows/suffix-marketplacing.yaml'
       - 'suffix/marketplacing/**'
 jobs:
-  remote_call:
+  remote-call:
     runs-on: ubuntu-latest
     steps:
       - run: curl -sSL https://raw.githubusercontent.com/astorDev/versy/$BRANCH/suffix/marketplacing/.sh | sh
         env:
           BRANCH: ${{ github.ref_name }}
-  local_action:
+  local-action:
     runs-on: ubuntu-latest
     steps:
       - id: suffix 
         uses: astorDev/versy/suffix/marketplacing@main
         with:
           script_branch: ${{ github.ref_name }}
+      - run: echo "Suffix is '${{ steps.suffix.outputs.suffix }}'"
+  marketplaced-action:
+    runs-on: ubuntu-latest
+    steps:
+      - id: suffix
+        uses: astorDev/suffix/@init
       - run: echo "Suffix is '${{ steps.suffix.outputs.suffix }}'"
