@@ -22,5 +22,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - id: suffix
-        uses: astorDev/suffix/@init
+        uses: astorDev/suffix/@main
       - run: echo "Suffix is '${{ steps.suffix.outputs.suffix }}'"
