@@ -2,10 +2,6 @@ name: 'Suffix'
 description: 'Generate Suffix based on the current branch'
 
 inputs:
-  script_branch:
-    description: 'Name of the branch in suffix repository'
-    required: false
-    default: 'main'
   script-branch:
     description: 'Name of the branch in suffix repository'
     required: false
