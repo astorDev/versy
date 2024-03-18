@@ -14,9 +14,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - id: suffix 
-        uses: astorDev/versy/suffix/marketplacing@main
+        uses: astorDev/versy/suffix/marketplacing@suffix-marketplacing
         with:
-          script_branch: ${{ github.ref_name }}
+          script-branch: ${{ github.ref_name }}
       - run: echo "Suffix is '${{ steps.suffix.outputs.suffix }}'"
   marketplaced-action:
     runs-on: ubuntu-latest
