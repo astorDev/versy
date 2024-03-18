@@ -13,9 +13,9 @@
         - [x] Test remote calls scripts
         - [x] Update remote calls scripts in article
         - [x] Fix grammar and style in the article
-- [ ] Marketplaced Action
+- [x] Marketplaced Action
     - [x] Setup a tutorial action folder structure
-    - [ ] Marketplace Suffix action
+    - [x] Marketplace Suffix action
     - [ ] Write an article
     - [ ] Marketplace CalVer
     - [ ] Marketplace Nuget
