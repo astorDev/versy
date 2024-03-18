@@ -6,6 +6,10 @@ inputs:
     description: 'Name of the branch in suffix repository'
     required: false
     default: 'main'
+  script-branch:
+    description: 'Name of the branch in suffix repository'
+    required: false
+    default: 'main'
 outputs:
   suffix:
     description: 'The generated suffix'
@@ -19,5 +23,5 @@ runs:
         echo "suffix=$SUFFIX" >> $GITHUB_OUTPUT
       shell: bash
       env:
-        SCRIPT_BRANCH: ${{ inputs.script_branch }}
+        SCRIPT_BRANCH: ${{ inputs.script-branch }}
         BRANCH: ${{ github.ref_name }}
