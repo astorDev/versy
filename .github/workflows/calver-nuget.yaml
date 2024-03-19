@@ -5,21 +5,21 @@ on:
       - 'calver/nuget/**'
       - '.sh'
 jobs:
-  remote_call:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4 # for the csproj
-      - run: curl -sSL $SOURCING_URL/.sh | sh -s calver_nuget
-        env:
-          SOURCING_URL: https://raw.githubusercontent.com/astorDev/versy/${{ github.ref_name }}
-          BRANCH: ${{ github.ref_name }}-b
-          RUN: ${{ github.run_number }}
-          PROJECT: 'nuget/Versy.Nuget'
-          NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}
+  # remote_call:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: actions/checkout@v4 # for the csproj
+  #     - run: curl -sSL $SOURCING_URL/.sh | sh -s calver_nuget
+  #       env:
+  #         SOURCING_URL: https://raw.githubusercontent.com/astorDev/versy/${{ github.ref_name }}
+  #         BRANCH: ${{ github.ref_name }}-b
+  #         RUN: ${{ github.run_number }}
+  #         PROJECT: 'nuget/Versy'
+  #         NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}
   custom_action:
     runs-on: ubuntu-latest
     steps:
       - uses: astorDev/versy/calver/nuget@main
         with:
-          project: 'nuget/Versy.Nuget'
+          project: 'nuget/Versy'
           nuget_api_key: ${{ secrets.NUGET_API_KEY }}

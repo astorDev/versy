@@ -6,6 +6,10 @@ inputs:
     description: 'Name of your main branch'
     required: false
     default: 'main'
+  script-branch:
+    description: 'Underlying script branch'
+    required: false
+    default: 'main'
   project:
     description: 'Path to .csproj file (without .csproj and `./`)'
     required: true
@@ -23,7 +27,7 @@ runs:
     - run: curl -sSL $SOURCING_URL/.sh | sh -s calver_nuget
       shell: bash
       env:
-        SOURCING_URL: https://raw.githubusercontent.com/astorDev/versy/${{ github.ref_name }}
+        SOURCING_URL: https://raw.githubusercontent.com/astorDev/versy/${{ inputs.script-branch }}
         BRANCH: ${{ github.ref_name }}
         RUN: ${{ github.run_number }}
         MAIN: ${{ inputs.main }}
