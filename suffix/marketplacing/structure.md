@@ -69,6 +69,6 @@ git push origin v1.0
 - [x] Publish the `suffix` to GitHub marketplace.
 - [x] Update suffix README
 
-## Drawbacks
+## Wrapping Approach Drawbacks
 
 - Studying marketplaced action itself doesn't provide any information on how the logic actually works.
