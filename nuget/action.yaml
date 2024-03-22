@@ -8,10 +8,10 @@ inputs:
   project:
     description: 'Path to .csproj file (without .csproj and `./`)'
     required: true
-  nuget_api_key:
+  nuget-api-key:
     description: 'Nuget API key'
     required: true
-  nuget_source:
+  nuget-source:
     description: 'Nuget source'
     required: false
     default: 'https://api.nuget.org/v3/index.json'
@@ -28,6 +28,6 @@ runs:
       env:
         VERSION: ${{ inputs.version }}
         PROJECT: ${{ inputs.project }}
-        NUGET_API_KEY: ${{ inputs.nuget_api_key }}
-        NUGET_SOURCE: ${{ inputs.nuget_source }}
+        NUGET_API_KEY: ${{ inputs.nuget-api-key }}
+        NUGET_SOURCE: ${{ inputs.nuget-source }}
       run: sh ./versy-nuget/nuget/.sh
