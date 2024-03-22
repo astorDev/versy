@@ -19,10 +19,10 @@ runs:
   steps:
     - id: calver
       run: |
-        VERSION=$(curl -sSL https://raw.githubusercontent.com/astorDev/versy/${SCRIPT_BRANCH}/.sh | sh -s calver)
+        VERSION=$(curl -sSL ${SOURCING_URL}/.sh | sh -s calver)
         echo "version=$VERSION" >> $GITHUB_OUTPUT
       shell: bash
       env:
-        SCRIPT_BRANCH: ${{ inputs.script-branch }}
         BRANCH: ${{ github.ref_name }}
         RUN: ${{ github.run_number }}
+        SOURCING_URL: https://raw.githubusercontent.com/astorDev/versy/${{ inputs.script-branch }}
