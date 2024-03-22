@@ -10,7 +10,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - id: version
-        uses: astorDev/versy/calver@main
+        uses: astorDev/versy/calver@nuget-naming-fix
+        with:
+          script-branch: ${{ github.ref_name }}
       - run: |
           if [ "${{ steps.version.outputs.version }}" = "" ]; then
             echo "No version found"

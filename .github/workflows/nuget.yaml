@@ -9,7 +9,7 @@ jobs:
   publish_nuget:
     runs-on: ubuntu-latest
     steps:
-      - uses: astorDev/versy/nuget@main
+      - uses: astorDev/versy/nuget@nuget-naming-fix
         with:
           project: 'nuget/Versy'
           nuget-api-key: ${{ secrets.NUGET_API_KEY }}

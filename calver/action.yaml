@@ -6,6 +6,10 @@ inputs:
     description: 'Name of your main branch'
     required: false
     default: 'main'
+  script-branch:
+    description: 'Name of the calver script version'
+    required: false
+    default: 'main'
 outputs:
   version:
     description: 'The generated version number'
@@ -15,13 +19,10 @@ runs:
   steps:
     - id: calver
       run: |
-        OUTPUT=$(curl -sSL https://raw.githubusercontent.com/astorDev/versy/main/calver/full.sh | sh)
-        echo "$OUTPUT"
-        VERSION=$(echo "$OUTPUT" | grep "VERSION is" | awk '{print $3}')
-        echo ""
-        echo "Extracted version '$VERSION' from previous output"
+        VERSION=$(curl -sSL https://raw.githubusercontent.com/astorDev/versy/${SCRIPT_BRANCH}/.sh | sh -s calver)
         echo "version=$VERSION" >> $GITHUB_OUTPUT
       shell: bash
       env:
+        SCRIPT_BRANCH: ${{ inputs.script-branch }}
         BRANCH: ${{ github.ref_name }}
         RUN: ${{ github.run_number }}
