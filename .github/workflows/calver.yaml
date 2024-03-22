@@ -1,8 +1,12 @@
 on:
   push:
+    paths:
+      - '.github/workflows/calver.yaml'
+      - 'calver/**'
+      - '.sh'
       
 jobs:
-  ouput_version:
+  local-action:
     runs-on: ubuntu-latest
     steps:
       - id: version

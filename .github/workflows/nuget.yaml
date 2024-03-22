@@ -1,5 +1,9 @@
 on:
   push:
+    paths:
+      - '.github/workflows/nuget.yaml'
+      - 'nuget/**'
+      - '.sh'
       
 jobs:
   publish_nuget:
@@ -7,6 +11,6 @@ jobs:
     steps:
       - uses: astorDev/versy/nuget@main
         with:
-          project: 'nuget/Versy.Nuget'
-          nuget_api_key: ${{ secrets.NUGET_API_KEY }}
+          project: 'nuget/Versy'
+          nuget-api-key: ${{ secrets.NUGET_API_KEY }}
           version: 1.1.${{ github.run_number }}-${{ github.ref_name }}

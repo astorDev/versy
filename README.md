@@ -7,6 +7,9 @@ In your repo create `.github/workflows/nuget.yml` with
 ```yaml
 on:
   push:
+    path:
+      - 'my/awesome/lib'
+      - '.github/workflows/nuget.yml'
 
 jobs:
   publish:
@@ -16,7 +19,7 @@ jobs:
       - uses: astorDev/versy/calver/nuget@main
         with:
           project: my/awesome/lib/My.Awesome.Lib
-          nuget_api_key: ${{ secrets.NUGET_API_KEY }}
+          nuget-api-key: ${{ secrets.NUGET_API_KEY }}
 ```
 
 And you'll get nugets published every time you push with version like this:
