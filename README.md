@@ -8,7 +8,7 @@ In your repo create `.github/workflows/nuget.yml` with
 on:
   push:
     paths:
-      - 'my/awesome/lib'
+      - 'my/awesome/lib/**'
       - '.github/workflows/nuget.yml'
 
 jobs:
