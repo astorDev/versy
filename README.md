@@ -2,7 +2,10 @@
 
 GitHub Actions for [CalVer](./calver/README.md) & [NuGet](./nuget/README.md).
 
-In your repo create `.github/workflows/nuget.yml` with
+## Using It
+
+1. Set repository secret `NUGET_API_KEY`
+2. In your repo create `.github/workflows/nuget.yml` with
 
 ```yaml
 on:
@@ -21,6 +24,7 @@ jobs:
           project: my/awesome/lib/My.Awesome.Lib
           nuget-api-key: ${{ secrets.NUGET_API_KEY }}
 ```
+
 
 And you'll get nugets published every time you push with version like this:
 
