@@ -29,7 +29,7 @@ push_docker() {
     log "Executing: $BUILD_COMMAND"
     $BUILD_COMMAND
 
-    if grep -q "-" "$VERSION"; then
+    if (echo "$VERSION" | grep -q "-"); then
         log "VERSION contains a hyphen. Not tagging as latest."
     else
         log "VERSION does not contain a hyphen. Tagging as latest."
