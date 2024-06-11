@@ -30,9 +30,9 @@ push_docker() {
     $BUILD_COMMAND
 
     if echo "$VERSION" | grep -q "-"; then
-        echo "VERSION contains a hyphen. Not tagging as latest."
+        log "VERSION contains a hyphen. Not tagging as latest."
     else
-        echo "VERSION does not contain a hyphen. Tagging as latest."
+        log "VERSION does not contain a hyphen. Tagging as latest."
         TAG_COMMAND="docker tag $IMAGE:$VERSION $IMAGE:latest"
         log "Executing: $TAG_COMMAND"
         $TAG_COMMAND
