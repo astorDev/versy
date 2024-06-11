@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - id: version
-        uses: astorDev/versy/calver@nuget-naming-fix
+        uses: astorDev/versy/calver@main
         with:
           script-branch: ${{ github.ref_name }}
       - run: |
