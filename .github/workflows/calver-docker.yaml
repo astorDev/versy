@@ -11,10 +11,8 @@ jobs:
   local-action:
     runs-on: ubuntu-latest
     steps:
-      - uses: astorDev/versy/calver/docker@docker
+      - uses: astorDev/versy/calver/docker@main
         with:
-          main: 'main'
-          script-branch: 'docker'
           image: 'vosarat/versy-hello'
           dockerfile-path: 'push_docker'
           docker-login: vosarat
