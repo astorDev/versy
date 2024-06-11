@@ -13,6 +13,7 @@ jobs:
     steps:
       - uses: astorDev/versy/calver/docker@main
         with:
+          script-branch: ${{ github.ref_name }}
           image: 'vosarat/versy-hello'
           dockerfile-path: 'push_docker'
           docker-login: vosarat

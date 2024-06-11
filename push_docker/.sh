@@ -29,6 +29,15 @@ push_docker() {
     log "Executing: $BUILD_COMMAND"
     $BUILD_COMMAND
 
+    if echo "$VERSION" | grep -q "-"; then
+        log "VERSION contains a hyphen. Not tagging as latest."
+    else
+        log "VERSION does not contain a hyphen. Tagging as latest."
+        TAG_COMMAND="docker tag $IMAGE:$VERSION $IMAGE:latest"
+        log "Executing: $TAG_COMMAND"
+        $TAG_COMMAND
+    fi
+
     PUSH_COMMAND="docker push $IMAGE:$VERSION"
     log "Executing: $PUSH_COMMAND"
     $PUSH_COMMAND
