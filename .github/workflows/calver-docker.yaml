@@ -5,6 +5,8 @@ on:
       - 'push_docker/**'
       - 'calver/docker/**'
       - '.sh'
+  workflow_dispatch:
+    
 jobs:
   local-action:
     runs-on: ubuntu-latest
