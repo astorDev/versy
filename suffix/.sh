@@ -2,7 +2,7 @@ suffix() {
     log "Calculating suffix (BRANCH='$BRANCH', MAIN='$MAIN')"
 
     if [ "$BRANCH" = "" ]; then
-        throw "Required variable BRANCH is empty. exiting..."
+        throw "Required variable BRANCH is empty"
     fi
 
     if [ "${MAIN}" = "" ]; then

@@ -1,0 +1,40 @@
+name: 'CalVer Docker'
+description: 'Generates a CalVer version number for Docker images'
+
+inputs:
+  main:
+    description: 'Name of your main branch'
+    required: false
+    default: 'main'
+  script-branch:
+    description: 'Name of the calver script version'
+    required: false
+    default: 'main'
+  image:
+    description: 'Name of the Docker image'
+    required: true
+  dockerfile-path:
+    description: 'Path to Dockerfile'
+    required: true
+  docker-login:
+    description: 'Docker login'
+    required: true
+  docker-password:
+    description: 'Docker password'
+    required: true
+runs:
+  using: "composite"
+  steps:
+    - uses: actions/checkout@v4
+    - run: curl -sSL $SOURCING_URL/.sh | sh -s calver_docker
+      shell: bash
+      env:
+        SOURCING_URL: https://raw.githubusercontent.com/astorDev/versy/${{ inputs.script-branch }}
+        BRANCH: ${{ github.ref_name }}
+        RUN: ${{ github.run_number }}
+        MAIN: ${{ inputs.main }}
+        IMAGE: ${{ inputs.image }}
+        VERSY_DOCKERFILE_PATH: ${{ inputs.dockerfile-path }}
+        DOCKER_LOGIN: ${{ inputs.docker-login }}
+        DOCKER_PASSWORD: ${{ inputs.docker-password }}
+  

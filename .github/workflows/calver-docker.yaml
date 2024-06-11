@@ -1,0 +1,21 @@
+on:
+  push:
+    paths:
+      - '.github/workflows/calver-docker.yaml'
+      - 'push_docker/**'
+      - 'calver/docker/**'
+      - '.sh'
+  workflow_dispatch:
+    
+jobs:
+  local-action:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: astorDev/versy/calver/docker@docker
+        with:
+          main: 'main'
+          script-branch: 'docker'
+          image: 'vosarat/versy-hello'
+          dockerfile-path: 'push_docker'
+          docker-login: vosarat
+          docker-password: ${{ secrets.DOCKER_PASSWORD }}
