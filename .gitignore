@@ -8,4 +8,5 @@ bld/
 [Oo]bj/
 [Ll]og/
 
+playground.*
 *.nupkg

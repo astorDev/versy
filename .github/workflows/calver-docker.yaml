@@ -16,6 +16,6 @@ jobs:
           main: 'main'
           script-branch: 'docker'
           image: 'vosarat/versy-hello'
-          dockerfile-path: 'docker'
+          dockerfile-path: 'push_docker'
           docker-login: vosarat
           docker-password: ${{ secrets.DOCKER_PASSWORD }}
