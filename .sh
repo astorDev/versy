@@ -30,10 +30,16 @@ sourcing() {
 sourcing suffix/
 sourcing calver/
 sourcing nuget/
+sourcing push_docker/
 
 calver_nuget() {
     calver
     nuget
+}
+
+calver_docker() {
+    calver
+    push_docker
 }
 
 ACTION=${1}
