@@ -38,7 +38,7 @@ push_docker() {
         $TAG_COMMAND
     fi
 
-    PUSH_COMMAND="docker push $IMAGE"
+    PUSH_COMMAND="docker push $IMAGE --all-tags"
     log "Executing: $PUSH_COMMAND"
     $PUSH_COMMAND
 }
