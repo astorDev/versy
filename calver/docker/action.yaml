@@ -13,8 +13,11 @@ inputs:
   image:
     description: 'Name of the Docker image'
     required: true
+  build-context-path:
+    description: 'Build context path'
+    required: true
   dockerfile-path:
-    description: 'Path to Dockerfile'
+    description: 'Dockerfile path'
     required: true
   docker-login:
     description: 'Docker login'
@@ -34,7 +37,8 @@ runs:
         RUN: ${{ github.run_number }}
         MAIN: ${{ inputs.main }}
         IMAGE: ${{ inputs.image }}
-        VERSY_DOCKERFILE_PATH: ${{ inputs.dockerfile-path }}
+        BUILD_CONTEXT_PATH: ${{ inputs.build-context-path }}
+        DOCKERFILE_PATH: ${{ inputs.dockerfile-path }}
         DOCKER_LOGIN: ${{ inputs.docker-login }}
         DOCKER_PASSWORD: ${{ inputs.docker-password }}
   

@@ -15,6 +15,7 @@ jobs:
         with:
           script-branch: ${{ github.ref_name }}
           image: 'vosarat/versy-hello'
-          dockerfile-path: 'push_docker'
+          build-context-path: '.'
+          dockerfile-path: 'push_docker/Dockerfile'
           docker-login: vosarat
           docker-password: ${{ secrets.DOCKER_PASSWORD }}
