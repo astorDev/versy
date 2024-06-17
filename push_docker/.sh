@@ -1,5 +1,5 @@
 push_docker() {
-    log "Building and publishing docker image (VERSION='$VERSION', IMAGE='$IMAGE', VERSY_DOCKERFILE_PATH='$VERSY_DOCKERFILE_PATH' DOCKER_LOGIN='$DOCKER_LOGIN')"
+    log "Building and publishing docker image (VERSION='$VERSION', IMAGE='$IMAGE', BUILD_CONTEXT_PATH='$BUILD_CONTEXT_PATH' DOCKERFILE_PATH='$DOCKERFILE_PATH' DOCKER_LOGIN='$DOCKER_LOGIN')"
 
     if [ "$DOCKER_LOGIN" = "" ]; then
         throw "Required variable DOCKER_LOGIN is missing"
@@ -20,12 +20,17 @@ push_docker() {
         throw "Required variable IMAGE is missing"
     fi
 
-    if [ "$VERSY_DOCKERFILE_PATH" = "" ]; then
+    if [ "$BUILD_CONTEXT_PATH" = "" ]; then
         log "PATH is not set, using '.'"
-        VERSY_DOCKERFILE_PATH="."
+        BUILD_CONTEXT_PATH="."
     fi
 
-    BUILD_COMMAND="docker build $VERSY_DOCKERFILE_PATH -t $IMAGE:$VERSION"
+if [ "$DOCKERFILE_PATH" = "" ]; then
+        log "DOCKERFILE_PATH is not set, using default: (PATH/Dockerfile)"
+        DOCKERFILE_PATH="PATH/Dockerfile"
+    fi
+
+    BUILD_COMMAND="docker build $BUILD_CONTEXT_PATH --file $DOCKERFILE_PATH --tag $IMAGE:$VERSION"
     log "Executing: $BUILD_COMMAND"
     $BUILD_COMMAND
 
