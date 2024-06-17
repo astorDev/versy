@@ -1,2 +1,3 @@
 FROM ubuntu:18.04
-CMD echo "Hello from versy container!"
+COPY hello.sh hello.sh
+CMD sh hello.sh
