@@ -30,7 +30,7 @@ if [ "$DOCKERFILE_PATH" = "" ]; then
         DOCKERFILE_PATH="PATH/Dockerfile"
     fi
 
-    BUILD_COMMAND="docker build $BUILD_CONTEXT_PATH --file $DOCKERFILE_PATH -tag $IMAGE:$VERSION"
+    BUILD_COMMAND="docker build $BUILD_CONTEXT_PATH --file $DOCKERFILE_PATH --tag $IMAGE:$VERSION"
     log "Executing: $BUILD_COMMAND"
     $BUILD_COMMAND
 
