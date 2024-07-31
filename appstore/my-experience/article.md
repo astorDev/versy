@@ -34,7 +34,7 @@ Although I agree my app didn't have a unique feature set the reason seems too ar
 
 ## The Freezing Winter
 
-The next time I've submitted the app on 9th of December. On 11th of December I got a rejection letter. However, that wasn't actually a rejection letter. This is what it said:
+The next time I submitted the app was on the 9th of December. On the 11th of December, I got a rejection letter. However, that wasn't actually a rejection letter. This is what it said:
 
 > Hello,
 > 
@@ -46,7 +46,7 @@ The next time I've submitted the app on 9th of December. On 11th of December I g
 > 
 > We will notify you as soon as there is new information to share. Other review inquiries may be filed via the Apple Developer Contact Us page.
 
-You may ask, why not just leaving it as a "Pending Review"? That's a mistery to me, too. Anyway, I started waiting. But by the 14th of January I was pretty confident my submission was forgotten. Plus, I've made some changes to the app at this time, so I've created a new review submission. I got a new rejection a month later, on Feb 16. This is the two rejection reasons it listed:
+You may ask, why not just leave it as a "Pending Review"? That's a mystery to me, too. Anyway, I started waiting. But by the 14th of January, I was pretty confident my submission was forgotten. Plus, I've made some changes to the app at this time, so I've created a new review submission. I got a new rejection a month later, on Feb 16. This is the two rejection reasons it listed:
 
 > ## Guideline 5.1.1(v) - Data Collection and Storage
 > 
@@ -62,7 +62,7 @@ Which is a valid point and was pretty trivial to fix. The second reason was quit
 > 
 > Apps may not require users to enter personal information to function, except when directly relevant to the core functionality of the app or required by law. For example, an e-commerce app should let users browse store offerings and other features that are not account based before being asked to register, or a restaurant app should allow users to explore the menu before placing an order. Registration must then only be required for account-specific features, such as saving items for future reference or placing an order.
 
-Which is also fair, but requires fundamental changes to the app. All in all, the review process was ridiculously long and unpleasant. It took me 4 month to prepare for the next attempt. 
+Which is also fair, but requires fundamental changes to the app. All in all, the review process was ridiculously long and unpleasant. It took me 4 months to prepare for the next attempt. 
 
 ## The Summer Boom
 
