@@ -66,15 +66,19 @@ Which is also fair, but requires fundamental changes to the app. All in all, the
 
 ## The Summer Boom
 
-Send to Review: Jun 4, 2024 at 7:46 AM
-
-Ready for Distribution: Jun 4, 2024 at 4:43 PM
+So, I've removed user registration process altogether, this time. And on the 4th of July, I've submitted my app one more time. Guess when it received a review results? On the same day! Imagine how surprised I was when previously the process took one month! Moreover, the review was successful
 
 ![](v1.0.png)
 
+Pretty soon, I've made an update to the app. This is how the next version review went:
+
 ![](v1.1.png)
 
+Pretty good, huh? I tried one more time and the results were similar:
+
 ![](v1.2.png)
+
+I wonder if that's really something related to the season. Anyway, things looking much more pleasant in the summer.
 
 ## This is Where We Are Now
 
