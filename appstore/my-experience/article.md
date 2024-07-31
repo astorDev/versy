@@ -34,47 +34,35 @@ Although I agree my app didn't have a unique feature set the reason seems too ar
 
 ## The Freezing Winter
 
-Submitted: Dec 9
+The next time I submitted the app was on the 9th of December. On the 11th of December, I got a rejection letter. However, that wasn't actually a rejection letter. This is what it said:
 
-Rejected: 2023-12-11
+> Hello,
+> 
+> Thank you for submitting your app for review.
+> 
+> We need additional time to evaluate your submission and Apple Developer Program account. Your submission status will appear as "Rejected" in App Store Connect while we investigate. However, we do not require a revised binary or additional information from you at this time.
+> 
+> While there may be a delay due to high submission volumes, we are working to complete our review as soon as possible. If we notice any issues that require your attention, we will let you know via App Store Connect. If we find no issues with your submission or account, the submission will be approved.
+> 
+> We will notify you as soon as there is new information to share. Other review inquiries may be filed via the Apple Developer Contact Us page.
 
-```
-Hello,
+You may ask, why not just leave it as a "Pending Review"? That's a mystery to me, too. Anyway, I started waiting. But by the 14th of January, I was pretty confident my submission was forgotten. Plus, I've made some changes to the app at this time, so I've created a new review submission. I got a new rejection a month later, on Feb 16. This is the two rejection reasons it listed:
 
-Thank you for submitting your app for review.
+> ## Guideline 5.1.1(v) - Data Collection and Storage
+> 
+> We noticed that your app supports account creation but does not appear to include an option to initiate account deletion. 
+> 
+> Apps that support account creation must also offer account deletion to give App Store users more control of the data they've shared while using your app.
 
-We need additional time to evaluate your submission and Apple Developer Program account. Your submission status will appear as "Rejected" in App Store Connect while we investigate. However, we do not require a revised binary or additional information from you at this time.
+Which is a valid point and was pretty trivial to fix. The second reason was quite similar:
 
-While there may be a delay due to high submission volumes, we are working to complete our review as soon as possible. If we notice any issues that require your attention, we will let you know via App Store Connect. If we find no issues with your submission or account, the submission will be approved.
+> ## Guideline 5.1.1 - Legal - Privacy - Data Collection and Storage
+> 
+> We noticed that your app requires users to register or log in to access features that are not account based.
+> 
+> Apps may not require users to enter personal information to function, except when directly relevant to the core functionality of the app or required by law. For example, an e-commerce app should let users browse store offerings and other features that are not account based before being asked to register, or a restaurant app should allow users to explore the menu before placing an order. Registration must then only be required for account-specific features, such as saving items for future reference or placing an order.
 
-We will notify you as soon as there is new information to share. Other review inquiries may be filed via the Apple Developer Contact Us page.
-```
-
-Which sounds a little absurd.
-
-Resubmitted with tiny update Jan 14, 2024.
-
-2024-02-16
-
-```
-## Guideline 5.1.1(v) - Data Collection and Storage
-
-We noticed that your app supports account creation but does not appear to include an option to initiate account deletion. 
-
-Apps that support account creation must also offer account deletion to give App Store users more control of the data they've shared while using your app.
-```
-
-Which is a valid point.
-
-```
-## Guideline 5.1.1 - Legal - Privacy - Data Collection and Storage
-
-We noticed that your app requires users to register or log in to access features that are not account based.
-
-Apps may not require users to enter personal information to function, except when directly relevant to the core functionality of the app or required by law. For example, an e-commerce app should let users browse store offerings and other features that are not account based before being asked to register, or a restaurant app should allow users to explore the menu before placing an order. Registration must then only be required for account-specific features, such as saving items for future reference or placing an order.
-```
-
-Which is also fair.
+Which is also fair, but requires fundamental changes to the app. All in all, the review process was ridiculously long and unpleasant. It took me 4 months to prepare for the next attempt. 
 
 ## The Summer Boom
 
@@ -90,4 +78,4 @@ Ready for Distribution: Jun 4, 2024 at 4:43 PM
 
 ## This is Where We Are Now
 
-This is my experience with AppStore, so far. I couldn't say it was very friendly, but it wasn't hostile either. The future holds a lot more releases, so let's see what else I'll figure out about AppStore releases. I'll probably write another article if something interesting pops up ... for now, claps are appreciated! 👏
+This is my experience with AppStore, so far. It wasn pretty hostile in the beginning, but turned normal in the end. The future holds a lot more releases, so let's see what else I'll figure out about AppStore releases. I'll probably write another article if something interesting pops up ... for now, claps are appreciated! 👏
