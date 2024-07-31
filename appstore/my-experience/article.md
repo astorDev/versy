@@ -11,26 +11,26 @@ My app [Finrir](https://apps.apple.com/us/app/finrir/id6472634631) was recently 
 
 ## First Attempt: Tasky
 
-The story actually starts from another creation of mine - a simple to-do list app, I called `Tasky`. My plan was to create a minimalistic to-do list, ship it to AppStore as quickly as possible, learn the process and decide on the next steps based on that. This is what the app looked like in a nutshell:
+The story actually starts from another creation of mine - a simple to-do list app, I called `Tasky`. My plan was to create a minimalistic to-do list, ship it to AppStore as quickly as possible, learn the process, and decide on the next steps based on that. This is what the app looked like in a nutshell:
 
 ![Tasky Demo](tasky-demo.gif)
 
-Two days after I send the app to review I received a rejection letter. The letter listed two reasons for the rejection:
+Two days after I sent the app to review I received a rejection letter. The letter listed two reasons for the rejection:
 
 > ## Guideline 2.3.10 - Performance - Accurate Metadata
 > 
 > We noticed your submission includes irrelevant references to your app’s development process. 
 > 
-> Specifically, your screenshots includes debug banners.
+> Specifically, your screenshots include debug banners.
 
 
-That reason made sense since I forgot to remove the annoying flutter debug banner. This was reasanable and easy to fix. But the second rejection reason was much more disturbing:
+That reason made sense since I forgot to remove the annoying flutter debug banner. This was reasonable and easy to fix. But the second rejection reason was much more disturbing:
 
 > ## Guideline 4.3 - Design
 > 
 > We noticed that your app provides the same feature set as other apps submitted to the App Store; it simply varies in content or language, which is considered a form of spam.
 
-Although, I agree my app didn't have a unique feature set the reason seems to be too arbitrary. The app wasn't supposed to be very unique, but it wasn't just varying in content or language - it has it's own user experience. It just seems that Apple should have a more sophisticated reason to reject an app, having in mind that I'm paying for the developer subscription. I received the rejection in July. After the rejection I decided to focus on the main app in the story and it took me 5 month to prepare to send an app to review one more time.
+Although I agree my app didn't have a unique feature set the reason seems too arbitrary. The app wasn't supposed to be very unique, but it wasn't just varying in content or language - it has its own user experience. It just seems that Apple should have a more sophisticated reason to reject an app, keeping in mind that I'm paying for the developer subscription. I received the rejection in July. After the rejection, I decided to focus on the main app in the story and it took me 5 months to prepare to send an app to review one more time.
 
 ## The Freezing Winter
 
