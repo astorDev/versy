@@ -30,7 +30,7 @@ That reason made sense since I forgot to remove the annoying flutter debug banne
 > 
 > We noticed that your app provides the same feature set as other apps submitted to the App Store; it simply varies in content or language, which is considered a form of spam.
 
-Although I agree my app didn't have a unique feature set the reason seems too arbitrary. The app wasn't supposed to be very unique, but it wasn't just varying in content or language - it has its own user experience. It just seems that Apple should have a more sophisticated reason to reject an app, keeping in mind that I'm paying for the developer subscription. I received the rejection in July. After the rejection, I decided to focus on the main app in the story and it took me 5 months to prepare to send an app to review one more time.
+I agree my app didn't have a unique feature set, but still the reason seems too arbitrary. The app wasn't supposed to be very unique, but it wasn't just varying in content or language - it has its own user experience. It just seems that Apple should have a more sophisticated reason to reject an app, keeping in mind that I'm paying for the developer subscription. I received the rejection in July. After the rejection, I decided to focus on the main app in the story and it took me 5 months to prepare to send an app to review one more time.
 
 ## The Freezing Winter
 
@@ -82,4 +82,4 @@ I wonder if that's really something related to the season. Anyway, things lookin
 
 ## This is Where We Are Now
 
-This is my experience with AppStore, so far. It wasn pretty hostile in the beginning, but turned normal in the end. The future holds a lot more releases, so let's see what else I'll figure out about AppStore releases. I'll probably write another article if something interesting pops up ... for now, claps are appreciated! 👏
+This is my experience with AppStore, so far. It was pretty hostile in the beginning, but turned normal in the end. The future holds a lot more releases, so let's see what else I'll figure out about AppStore releases. I'll probably write another article if something interesting pops up ... for now, claps are appreciated! 👏
