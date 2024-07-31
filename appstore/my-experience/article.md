@@ -30,7 +30,7 @@ That reason made sense since I forgot to remove the annoying flutter debug banne
 > 
 > We noticed that your app provides the same feature set as other apps submitted to the App Store; it simply varies in content or language, which is considered a form of spam.
 
-I agree my app didn't have a unique feature set, but still the reason seems too arbitrary. The app wasn't supposed to be very unique, but it wasn't just varying in content or language - it has its own user experience. It just seems that Apple should have a more sophisticated reason to reject an app, keeping in mind that I'm paying for the developer subscription. I received the rejection in July. After the rejection, I decided to focus on the main app in the story and it took me 5 months to prepare to send an app to review one more time.
+I agree my app didn't have a unique feature set, but still, the reason seems too arbitrary. The app wasn't supposed to be very unique, but it wasn't just varying in content or language - it has its own user experience. It just seems that Apple should have a more sophisticated reason to reject an app, keeping in mind that I'm paying for the developer subscription. I received the rejection in July. After the rejection, I decided to focus on the main app in the story and it took me 5 months to prepare to send an app to review one more time.
 
 ## The Freezing Winter
 
@@ -66,7 +66,7 @@ Which is also fair, but requires fundamental changes to the app. All in all, the
 
 ## The Summer Boom
 
-So, I've removed user registration process altogether, this time. And on the 4th of July, I've submitted my app one more time. Guess when it received a review results? On the same day! Imagine how surprised I was when previously the process took one month! Moreover, the review was successful
+So, I've removed the user registration process altogether, this time. And on the 4th of July, I submitted my app one more time. Guess when it received a review results? On the same day! Imagine how surprised I was when previously the process took one month! Moreover, the review was successful
 
 ![](v1.0.png)
 
@@ -78,8 +78,9 @@ Pretty good, huh? I tried one more time and the results were similar:
 
 ![](v1.2.png)
 
-I wonder if that's really something related to the season. Anyway, things looking much more pleasant in the summer.
+I wonder if that's really something related to the season. Anyway, things look much more pleasant in the summer.
 
 ## This is Where We Are Now
 
-This is my experience with AppStore, so far. It was pretty hostile in the beginning, but turned normal in the end. The future holds a lot more releases, so let's see what else I'll figure out about AppStore releases. I'll probably write another article if something interesting pops up ... for now, claps are appreciated! 👏
+This is my experience with AppStore, so far. It was pretty hostile in the beginning but turned normal in the end. The future holds a lot more releases, so let's see what else I'll figure out about AppStore releases. I'll probably write another article if something interesting pops up ... for now, claps are appreciated! 👏
+.
