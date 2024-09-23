@@ -13,7 +13,8 @@ throw() {
 }
 
 ret() {
-    printf "${1}\n"
+    printf %s "${1}"
+    printf "\n" >&2
 }
 
 sourcing() {
