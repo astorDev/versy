@@ -1,0 +1,7 @@
+name: versy-flutter
+
+services:
+  example:
+    build: .
+    ports:
+      - "4444:80"
