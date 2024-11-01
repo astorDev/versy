@@ -1,4 +1,4 @@
-FROM debian:latest AS build-env
+FROM ubuntu
 
 RUN apt-get update
 RUN apt-get install -y curl git unzip
