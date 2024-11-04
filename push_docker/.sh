@@ -30,20 +30,15 @@ if [ "$DOCKERFILE_PATH" = "" ]; then
         DOCKERFILE_PATH="PATH/Dockerfile"
     fi
 
-    BUILD_COMMAND="docker build $BUILD_CONTEXT_PATH --file $DOCKERFILE_PATH --tag $IMAGE:$VERSION"
-    log "Executing: $BUILD_COMMAND"
-    $BUILD_COMMAND
-
     if (echo "$VERSION" | grep -q "-"); then # () is important to preserve execution order.
-        log "VERSION contains a hyphen. Not tagging as latest."
+        TAG_OPTIONS="--tag $IMAGE:$VERSION"
+        log "VERSION contains a hyphen. Applying only calver tag ($TAG_OPTIONS)."
     else
-        log "VERSION does not contain a hyphen. Tagging as latest."
-        TAG_COMMAND="docker tag $IMAGE:$VERSION $IMAGE:latest"
-        log "Executing: $TAG_COMMAND"
-        $TAG_COMMAND
+        TAG_OPTIONS="--tag $IMAGE:$VERSION --tag $IMAGE:latest"
+        log "VERSION does not contain a hyphen. Applying calver and latest tags ($TAG_OPTIONS)."
     fi
 
-    PUSH_COMMAND="docker push $IMAGE --all-tags"
-    log "Executing: $PUSH_COMMAND"
-    $PUSH_COMMAND
+    BUILD_COMMAND="docker buildx build --platform linux/amd64,linux/arm64 --push $BUILD_CONTEXT_PATH --file $DOCKERFILE_PATH $TAG_OPTIONS"
+    log "Executing: $BUILD_COMMAND"
+    $BUILD_COMMAND
 }
