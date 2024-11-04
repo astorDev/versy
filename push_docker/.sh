@@ -30,24 +30,28 @@ if [ "$DOCKERFILE_PATH" = "" ]; then
         DOCKERFILE_PATH="PATH/Dockerfile"
     fi
 
-    BUILD_COMMAND="docker buildx build --platform linux/amd64,linux/arm64 $BUILD_CONTEXT_PATH --file $DOCKERFILE_PATH --tag $IMAGE:$VERSION"
+    if (echo "$VERSION" | grep -q "-"); then # () is important to preserve execution order.
+        TAG_OPTIONS="--tag $IMAGE:$VERSION"
+        log "VERSION contains a hyphen. Applying only calver tag ($TAG_OPTIONS)."
+    else
+        TAG_OPTIONS="--tag $IMAGE:$VERSION --tag $IMAGE:latest"
+        log "VERSION does not contain a hyphen. Applying calver and latest tags ($TAG_OPTIONS)."
+    fi
+
+    BUILD_COMMAND="docker buildx build --platform linux/amd64,linux/arm64 --push $BUILD_CONTEXT_PATH --file $DOCKERFILE_PATH $TAG_OPIONS"
     log "Executing: $BUILD_COMMAND"
     $BUILD_COMMAND
 
-    LOAD_COMMAND="docker load -i built.tar"
-    log "Executing: $LOAD_COMMAND"
-    $LOAD_COMMAND
+    # if (echo "$VERSION" | grep -q "-"); then # () is important to preserve execution order.
+    #     log "VERSION contains a hyphen. Not tagging as latest."
+    # else
+    #     log "VERSION does not contain a hyphen. Tagging as latest."
+    #     TAG_COMMAND="docker tag $IMAGE:$VERSION $IMAGE:latest"
+    #     log "Executing: $TAG_COMMAND"
+    #     $TAG_COMMAND
+    # fi
 
-    if (echo "$VERSION" | grep -q "-"); then # () is important to preserve execution order.
-        log "VERSION contains a hyphen. Not tagging as latest."
-    else
-        log "VERSION does not contain a hyphen. Tagging as latest."
-        TAG_COMMAND="docker tag $IMAGE:$VERSION $IMAGE:latest"
-        log "Executing: $TAG_COMMAND"
-        $TAG_COMMAND
-    fi
-
-    PUSH_COMMAND="docker push $IMAGE --all-tags"
-    log "Executing: $PUSH_COMMAND"
-    $PUSH_COMMAND
+    # PUSH_COMMAND="docker push $IMAGE --all-tags"
+    # log "Executing: $PUSH_COMMAND"
+    # $PUSH_COMMAND
 }
