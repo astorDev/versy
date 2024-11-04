@@ -38,7 +38,7 @@ if [ "$DOCKERFILE_PATH" = "" ]; then
         log "VERSION does not contain a hyphen. Applying calver and latest tags ($TAG_OPTIONS)."
     fi
 
-    BUILD_COMMAND="docker buildx build --platform linux/amd64,linux/arm64 --push $BUILD_CONTEXT_PATH --file $DOCKERFILE_PATH $TAG_OPIONS"
+    BUILD_COMMAND="docker buildx build --platform linux/amd64,linux/arm64 --push $BUILD_CONTEXT_PATH --file $DOCKERFILE_PATH $TAG_OPTIONS"
     log "Executing: $BUILD_COMMAND"
     $BUILD_COMMAND
 
