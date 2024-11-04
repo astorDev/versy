@@ -2,8 +2,6 @@ name: versy-flutter
 
 services:
   example:
-    build: 
-      context: .
-      dockerfile: final.Dockerfile
+    build: .
     ports:
       - "4444:80"
