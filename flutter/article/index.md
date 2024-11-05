@@ -4,6 +4,8 @@ In March 2021, Flutter 2.0 included support for the web as a target platform. St
 
 > Or jump straight to the [TLDR](#tldr) to find an example setup.
 
+![](thumb.png)
+
 ## Naive Implementation: Nginx Only Image
 
 ```sh
@@ -30,6 +32,8 @@ services:
 ```sh
 docker compose up -d --build
 ```
+
+`localhost:4444`
 
 ## Full Dockerfile: Building Hosting Files  
 
