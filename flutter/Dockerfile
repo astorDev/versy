@@ -7,5 +7,4 @@ RUN git clone https://github.com/flutter/flutter.git
 
 ENV PATH="/flutter/bin:${PATH}"
 RUN flutter doctor -v
-RUN flutter config --enable-web
 RUN flutter build web || echo "expected fail (build triggered to preload web sdk)"
