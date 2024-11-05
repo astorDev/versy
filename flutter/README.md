@@ -1,6 +1,6 @@
 # Flutter Build Image
 
-Image allowing you to build your flutter app for web. Here's how you may use it:
+Image, allowing you to build your flutter app for the web. Here's how you may use it:
 
 ```dockerfile
 FROM vosarat/flutter AS build
@@ -14,4 +14,4 @@ FROM nginx
 COPY --from=build /app/build/web /usr/share/nginx/html
 ```
 
-To figure out how it works checkout the dedicated [article](article/index.md).
+To figure out how it works check out the dedicated [article](article/index.md).
