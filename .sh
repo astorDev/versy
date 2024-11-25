@@ -8,7 +8,7 @@ log() {
 }
 
 throw() {
-    printf "${RED}${1}. Exiting...${NC}" >&2 
+    printf "${RED}${1}. Exiting...${NC}\n" >&2 
     exit 1
 }
 
@@ -25,6 +25,7 @@ sourcing() {
         log "Sourcing $SOURCING_URL/$1.sh"
         curl -sSL "$SOURCING_URL/$1.sh" > ./x.sh
         . ./x.sh
+        rm ./x.sh
     fi
 }
 

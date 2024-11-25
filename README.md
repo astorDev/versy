@@ -12,6 +12,20 @@ Here's the same script runned from the repository root:
 RUN=32 BRANCH=beta sh .sh calver
 ```
 
+## Local Installation
+
+Add the repo to the path, e.g. open configuration file in VS Code `code ~/.bash_profile` and add
+
+```sh
+export PATH="$PATH:/Users/egortarasov/repos/versy"
+```
+
+Now for a new shell session you should be able to run a command like this:
+
+```sh
+BRANCH=feature-one RUN=40 versy calver
+```
+
 ## Using It
 
 1. Set repository secret `NUGET_API_KEY`
