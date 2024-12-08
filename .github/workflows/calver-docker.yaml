@@ -11,7 +11,7 @@ jobs:
   local-action:
     runs-on: ubuntu-latest
     steps:
-      - uses: astorDev/versy/calver/docker@main
+      - uses: astorDev/versy/calver/docker@docker-platform
         with:
           script-branch: ${{ github.ref_name }}
           image: 'vosarat/versy-hello'
