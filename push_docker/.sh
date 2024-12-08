@@ -25,7 +25,7 @@ push_docker() {
         BUILD_CONTEXT_PATH="."
     fi
 
-if [ "$DOCKERFILE_PATH" = "" ]; then
+    if [ "$DOCKERFILE_PATH" = "" ]; then
         log "DOCKERFILE_PATH is not set, using default: (PATH/Dockerfile)"
         DOCKERFILE_PATH="PATH/Dockerfile"
     fi
@@ -38,7 +38,12 @@ if [ "$DOCKERFILE_PATH" = "" ]; then
         log "VERSION does not contain a hyphen. Applying calver and latest tags ($TAG_OPTIONS)."
     fi
 
-    BUILD_COMMAND="docker buildx build --platform linux/amd64,linux/arm64 --push $BUILD_CONTEXT_PATH --file $DOCKERFILE_PATH $TAG_OPTIONS"
+    if [ "$DOCKER_PLATFORM" = ""] ; then
+        DOCKER_PLATFORM="linux/amd64,linux/arm64"
+        log "DOCKER_PLATFORM is not set, using 'linux/amd64,linux/arm64'"
+    fi
+
+    BUILD_COMMAND="docker buildx build --platform $DOCKER_PLATFORM --push $BUILD_CONTEXT_PATH --file $DOCKERFILE_PATH $TAG_OPTIONS"
     log "Executing: $BUILD_COMMAND"
     $BUILD_COMMAND
 }
