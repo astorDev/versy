@@ -38,9 +38,9 @@ push_docker() {
         log "VERSION does not contain a hyphen. Applying calver and latest tags ($TAG_OPTIONS)."
     fi
 
-    if [ "$DOCKER_PLATFORM" = ""] ; then
-        DOCKER_PLATFORM="linux/amd64,linux/arm64"
+    if [ "$DOCKER_PLATFORM" = ""]; then
         log "DOCKER_PLATFORM is not set, using 'linux/amd64,linux/arm64'"
+        DOCKER_PLATFORM="linux/amd64,linux/arm64"
     fi
 
     BUILD_COMMAND="docker buildx build --platform $DOCKER_PLATFORM --push $BUILD_CONTEXT_PATH --file $DOCKERFILE_PATH $TAG_OPTIONS"
