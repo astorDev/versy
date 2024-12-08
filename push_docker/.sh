@@ -1,5 +1,5 @@
 push_docker() {
-    log "Building and publishing docker image (VERSION='$VERSION', IMAGE='$IMAGE', BUILD_CONTEXT_PATH='$BUILD_CONTEXT_PATH' DOCKERFILE_PATH='$DOCKERFILE_PATH' DOCKER_LOGIN='$DOCKER_LOGIN')"
+    log "Building and publishing docker image (VERSION='$VERSION', IMAGE='$IMAGE', BUILD_CONTEXT_PATH='$BUILD_CONTEXT_PATH' DOCKERFILE_PATH='$DOCKERFILE_PATH' DOCKER_LOGIN='$DOCKER_LOGIN' DOCKER_PLATFORM='$DOCKER_PLATFORM')"
 
     if [ "$DOCKER_LOGIN" = "" ]; then
         throw "Required variable DOCKER_LOGIN is missing"
