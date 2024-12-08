@@ -32,7 +32,7 @@ sourcing() {
 sourcing suffix/
 sourcing calver/
 sourcing nuget/
-sourcing push_docker/
+sourcing docker/
 
 calver_nuget() {
     calver

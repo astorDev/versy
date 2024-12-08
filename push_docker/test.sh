@@ -1,1 +1,0 @@
-docker run vosarat/versy-hello:2024.106.117.21-docker-build-path
