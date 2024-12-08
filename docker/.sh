@@ -32,8 +32,8 @@ push_docker() {
     fi
 
     if [ "$DOCKERFILE_PATH" = "" ]; then
-        log "DOCKERFILE_PATH is not set, using default: (PATH/Dockerfile)"
-        DOCKERFILE_PATH="PATH/Dockerfile"
+        log "DOCKERFILE_PATH is not set, using default: (./Dockerfile)"
+        DOCKERFILE_PATH="./Dockerfile"
     fi
 
     if (echo "$VERSION" | grep -q "-"); then # () is important to preserve execution order.
@@ -44,7 +44,7 @@ push_docker() {
         log "VERSION does not contain a hyphen. Applying calver and latest tags ($TAG_OPTIONS)."
     fi
 
-    if [ "$DOCKER_PLATFORM" = ""]; then
+    if [ "$DOCKER_PLATFORM" = "" ]; then
         log "DOCKER_PLATFORM is not set, using 'linux/amd64,linux/arm64'"
         DOCKER_PLATFORM="linux/amd64,linux/arm64"
     fi
