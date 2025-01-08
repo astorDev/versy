@@ -1,5 +1,7 @@
 #! /bin/bash
-. /dev/stdin <<< "$(curl -sS https://raw.githubusercontent.com/astorDev/nice-shell/main/.sh)"
+# . /dev/stdin <<< "$(curl -sS https://raw.githubusercontent.com/astorDev/nice-shell/main/.sh)"
+
+curl -sS https://raw.githubusercontent.com/astorDev/nice-shell/main/.sh | . /dev/stdin
 log "Sourced nice-shell"
 
 sourcing() {
