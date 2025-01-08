@@ -7,6 +7,7 @@ push_docker() {
     log "DOCKER_LOGIN='$DOCKER_LOGIN'" 
     log "DOCKER_PLATFORM='$DOCKER_PLATFORM'"
     log "DOCKER_REGISTRY='$DOCKER_REGISTRY'"
+    log "EXTRA_FLAGS='$EXTRA_FLAGS'"
 
     if [ "$DOCKER_LOGIN" = "" ]; then
         throw "Required variable DOCKER_LOGIN is missing"
@@ -50,7 +51,7 @@ push_docker() {
         DOCKER_PLATFORM="linux/amd64,linux/arm64"
     fi
 
-    BUILD_COMMAND="docker buildx build --platform $DOCKER_PLATFORM --push $BUILD_CONTEXT_PATH --file $DOCKERFILE_PATH $TAG_OPTIONS"
+    BUILD_COMMAND="docker buildx build --platform $DOCKER_PLATFORM --push $EXTRA_FLAGS $BUILD_CONTEXT_PATH --file $DOCKERFILE_PATH $TAG_OPTIONS"
     log "Executing: $BUILD_COMMAND"
     $BUILD_COMMAND
 }

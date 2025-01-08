@@ -2,7 +2,7 @@ on:
   push:
     paths:
       - '.github/workflows/calver-docker.yaml'
-      - 'push_docker/**'
+      - 'docker/**'
       - 'calver/docker/**'
       - '.sh'
   workflow_dispatch:
