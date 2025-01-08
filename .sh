@@ -2,11 +2,11 @@
 # . /dev/stdin <<< "$(curl -sS https://raw.githubusercontent.com/astorDev/nice-shell/main/.sh)"
 
 source_remote() {
-    # curl -sSL $1 > ./x.sh
-    # . ./x.sh
-    # rm ./x.sh
+    curl -sSL $1 > ./x.sh
+    . ./x.sh
+    rm ./x.sh
 
-    curl -sSL https://raw.githubusercontent.com/astorDev/nice-shell/main/.sh > ./x.sh && . ./x.sh && rm ./x.sh
+    # curl -sSL https://raw.githubusercontent.com/astorDev/nice-shell/main/.sh > ./x.sh && . ./x.sh && rm ./x.sh
 
 
     # . <(curl -sS https://raw.githubusercontent.com/astorDev/nice-shell/main/.sh)
