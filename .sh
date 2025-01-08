@@ -6,7 +6,7 @@ source_remote() {
     # . ./x.sh
     # rm ./x.sh
 
-    curl -sSL https://raw.githubusercontent.com/astorDev/nice-shell/main/.sh > x.sh && . x.sh && rm x.sh
+    curl -sSL https://raw.githubusercontent.com/astorDev/nice-shell/main/.sh > ./x.sh && . ./x.sh && rm ./x.sh
 
 
     # . <(curl -sS https://raw.githubusercontent.com/astorDev/nice-shell/main/.sh)
