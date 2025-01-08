@@ -6,6 +6,7 @@ push_docker() {
     log "DOCKERFILE_PATH='$DOCKERFILE_PATH'" 
     log "DOCKER_LOGIN='$DOCKER_LOGIN'" 
     log "DOCKER_PLATFORM='$DOCKER_PLATFORM'"
+    log "DOCKER_REGISTRY='$DOCKER_REGISTRY'"
 
     if [ "$DOCKER_LOGIN" = "" ]; then
         throw "Required variable DOCKER_LOGIN is missing"
@@ -16,7 +17,7 @@ push_docker() {
     fi
 
     log "Logging into docker"
-    docker login -u $DOCKER_LOGIN -p $DOCKER_PASSWORD
+    docker login -u $DOCKER_LOGIN -p $DOCKER_PASSWORD $DOCKER_REGISTRY
 
     if [ "$VERSION" = "" ]; then
         throw "Required variable VERSION is missing"
