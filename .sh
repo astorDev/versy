@@ -1,7 +1,16 @@
 #! /bin/bash
 # . /dev/stdin <<< "$(curl -sS https://raw.githubusercontent.com/astorDev/nice-shell/main/.sh)"
 
-curl -sS https://raw.githubusercontent.com/astorDev/nice-shell/main/.sh | . /dev/stdin
+source_remote() {
+    # curl -sSL $1 > ./x.sh
+    # . ./x.sh
+    # rm ./x.sh
+
+    . <(curl -sS https://raw.githubusercontent.com/astorDev/nice-shell/main/.sh)
+
+}
+
+source_remote https://raw.githubusercontent.com/astorDev/nice-shell/main/.sh
 log "Sourced nice-shell"
 
 sourcing() {
