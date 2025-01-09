@@ -67,9 +67,6 @@ push_docker() {
         BUILD_COMMAND="docker build --push $EXTRA_FLAGS $BUILD_CONTEXT_PATH --file $DOCKERFILE_PATH $TAG_OPTIONS"
         log "Executing: $BUILD_COMMAND"
         $BUILD_COMMAND
-        PUSH_COMMAND="docker push $IMAGE --all-tags"
-        log "Executing: $PUSH_COMMAND"
-        $PUSH_COMMAND
     fi
 
 }
