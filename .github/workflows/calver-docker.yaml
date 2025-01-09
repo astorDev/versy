@@ -11,7 +11,7 @@ jobs:
   local-action:
     runs-on: ubuntu-latest
     steps:
-      - uses: astorDev/versy/calver/docker@no-buildx-support
+      - uses: astorDev/versy/calver/docker@main
         with:
           script-branch: ${{ github.ref_name }}
           image: 'vosarat/versy-hello'
@@ -19,4 +19,4 @@ jobs:
           dockerfile-path: 'docker/Dockerfile'
           docker-login: vosarat
           docker-password: ${{ secrets.DOCKER_PASSWORD }}
-          use-buildx: false
+          use-buildx: true

@@ -58,7 +58,7 @@ push_docker() {
     fi
 
     if [ "$USE_BUILDX" != "false" ]; then
-        log "USE_BUILDX is not set to FALSE. It's enabled by default, using buildx"
+        log "USE_BUILDX is not set to false. It's enabled by default, using buildx"
         BUILD_COMMAND="docker buildx build --platform $DOCKER_PLATFORM --push $EXTRA_FLAGS $BUILD_CONTEXT_PATH --file $DOCKERFILE_PATH $TAG_OPTIONS"
         log "Executing: $BUILD_COMMAND"
         $BUILD_COMMAND
