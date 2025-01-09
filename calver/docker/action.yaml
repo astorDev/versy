@@ -31,7 +31,7 @@ inputs:
   use-buildx:
     description: 'Use Buildx'
     required: false
-    default: 'TRUE'
+    default: 'false'
 runs:
   using: "composite"
   steps:
