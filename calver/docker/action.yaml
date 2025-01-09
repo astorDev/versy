@@ -28,6 +28,10 @@ inputs:
   docker-platform:
     description: 'Docker platform'
     required: false
+  use-buildx:
+    description: 'Use Buildx'
+    required: false
+    default: 'TRUE'
 runs:
   using: "composite"
   steps:
@@ -46,4 +50,5 @@ runs:
         DOCKER_LOGIN: ${{ inputs.docker-login }}
         DOCKER_PASSWORD: ${{ inputs.docker-password }}
         DOCKER_PLATFORM: ${{ inputs.docker-platform }}
+        USE_BUILDX: ${{ inputs.use-buildx }}
   

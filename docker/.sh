@@ -8,6 +8,7 @@ push_docker() {
     log "DOCKER_PLATFORM='$DOCKER_PLATFORM'"
     log "DOCKER_REGISTRY='$DOCKER_REGISTRY'"
     log "EXTRA_FLAGS='$EXTRA_FLAGS'"
+    log "USE_BUILDX='$USE_BUILDX'"
 
     if [ "$DOCKER_LOGIN" = "" ]; then
         throw "Required variable DOCKER_LOGIN is missing"
@@ -38,6 +39,11 @@ push_docker() {
         DOCKERFILE_PATH="./Dockerfile"
     fi
 
+    if [ "$USE_BUILDX" = "" ]; then
+        log "USE_BUILDX is not set, using default: TRUE"
+        USE_BUILDX="TRUE"
+    fi
+
     if (echo "$VERSION" | grep -q "-"); then # () is important to preserve execution order.
         TAG_OPTIONS="--tag $IMAGE:$VERSION"
         log "VERSION contains a hyphen. Applying only calver tag ($TAG_OPTIONS)."
@@ -51,7 +57,19 @@ push_docker() {
         DOCKER_PLATFORM="linux/amd64,linux/arm64"
     fi
 
-    BUILD_COMMAND="docker buildx build --platform $DOCKER_PLATFORM --push $EXTRA_FLAGS $BUILD_CONTEXT_PATH --file $DOCKERFILE_PATH $TAG_OPTIONS"
-    log "Executing: $BUILD_COMMAND"
-    $BUILD_COMMAND
+    if [ "$USE_BUILDX" != "FALSE" ]; then
+        log "USE_BUILDX is not set to FALSE. It's enabled by default, using buildx"
+        BUILD_COMMAND="docker buildx build --platform $DOCKER_PLATFORM --push $EXTRA_FLAGS $BUILD_CONTEXT_PATH --file $DOCKERFILE_PATH $TAG_OPTIONS"
+        log "Executing: $BUILD_COMMAND"
+        $BUILD_COMMAND
+    else
+        log "USE_BUILDX is set to FALSE. Using regular build"
+        BUILD_COMMAND="docker build --push $EXTRA_FLAGS $BUILD_CONTEXT_PATH --file $DOCKERFILE_PATH $TAG_OPTIONS"
+        log "Executing: $BUILD_COMMAND"
+        $BUILD_COMMAND
+        PUSH_COMMAND="docker push $IMAGE --all-tags"
+        log "Executing: $PUSH_COMMAND"
+        $PUSH_COMMAND
+    fi
+
 }
