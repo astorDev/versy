@@ -16,6 +16,8 @@ nuget() {
         NUGET_SOURCE="https://api.nuget.org/v3/index.json"
     fi
 
+    log "Starting nuget pack & publish. .NET version: $(dotnet --version)"
+
     log "Packing project with: 'dotnet pack ./$PROJECT.csproj /p:PackageVersion=$VERSION -o ./'"
     dotnet pack ./$PROJECT.csproj /p:PackageVersion=$VERSION -o ./
 

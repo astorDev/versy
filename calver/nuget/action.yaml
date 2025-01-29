@@ -16,6 +16,10 @@ inputs:
   nuget-api-key:
     description: 'Nuget API key'
     required: true
+  dotnet-version:
+    description: '.NET version. Syntax: https://github.com/actions/setup-dotnet?tab=readme-ov-file#supported-version-syntax'
+    required: false
+    default: '9'
   nuget-source:
     description: 'Nuget source'
     required: false
@@ -24,6 +28,9 @@ runs:
   using: "composite"
   steps:
     - uses: actions/checkout@v4 # for the csproj
+    - uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: ${{ inputs.dotnet-version }}
     - run: curl -sSL $SOURCING_URL/.sh | sh -s calver_nuget
       shell: bash
       env:
