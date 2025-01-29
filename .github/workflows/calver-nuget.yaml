@@ -3,6 +3,7 @@ on:
     paths:
       - '.github/workflows/calver-nuget.yaml'
       - 'calver/nuget/**'
+      - 'nuget/**'
       - '.sh'
 jobs:
   local-action:
