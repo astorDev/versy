@@ -1,0 +1,14 @@
+name: 'Dotnet Version'
+on:
+  push:
+    paths:
+      - '.github/workflows/dotnet-version.yaml'
+  workflow_dispatch:
+
+jobs:
+  print-dotnet-version:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/setup-dotnet@v4
+      - shell: bash
+        run: dotnet --version
