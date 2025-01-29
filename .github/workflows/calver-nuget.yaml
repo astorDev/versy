@@ -12,4 +12,5 @@ jobs:
       - uses: astorDev/versy/calver/nuget@dotnet-version-experiment
         with:
           project: 'nuget/Versy'
+          script-branch: ${{ github.ref_name }}
           nuget-api-key: ${{ secrets.NUGET_API_KEY }}
