@@ -29,6 +29,12 @@ calver_docker() {
     push_docker
 }
 
+gitlab_calver_docker() {
+    map_gitlab_params
+    calver
+    push_docker
+}
+
 ACTION=${1}
 log "Executing action '$ACTION'"
 $ACTION
