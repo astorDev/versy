@@ -18,6 +18,7 @@ sourcing suffix/
 sourcing calver/
 sourcing nuget/
 sourcing docker/
+sourcing gitlab/
 
 calver_nuget() {
     calver
@@ -25,6 +26,12 @@ calver_nuget() {
 }
 
 calver_docker() {
+    calver
+    push_docker
+}
+
+gitlab_calver_docker() {
+    map_gitlab_params
     calver
     push_docker
 }
