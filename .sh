@@ -18,6 +18,7 @@ sourcing suffix/
 sourcing calver/
 sourcing nuget/
 sourcing docker/
+sourcing gitlab/
 
 calver_nuget() {
     calver
