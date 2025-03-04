@@ -1,32 +1,23 @@
 # Versy
 
-GitHub Actions for [CalVer](./calver/README.md) & [NuGet](./nuget/README.md). Here's a simple one liner to check a version you might expect as a result:
+Scripts and GitHub Actions for creating versions of: [NuGet](./nuget/README.md), [Docker Images](./calver/docker/action.yaml), and others. Build mostly on [CalVer](./calver/README.md) - seamless date-based versioning system. You can check how it works by running the script below:
 
 ```sh
-export SOURCING_URL=https://raw.githubusercontent.com/astorDev/versy/main BRANCH=beta RUN=11 && curl -sSL $SOURCING_URL/.sh | sh -s calver
+export BRANCH=feature-one RUN=8
+curl -sSL https://raw.githubusercontent.com/astorDev/versy/refs/heads/main/versy | sh -s calver
 ```
 
-Here's the same script runned from the repository root:
+Here's how the script result might look like:
 
-```sh
-RUN=32 BRANCH=beta sh .sh calver
-```
+![](/calver/docker/101-article/demo-101.png)
 
-## Local Installation
+## Using CalVer In CI Pipelines
 
-Add the repo to the path, e.g. open configuration file in VS Code `code ~/.bash_profile` and add
+Here are a few examples of packing things with CalVer using our helper tools:
 
-```sh
-export PATH="$PATH:/Users/egortarasov/repos/versy"
-```
+**Nuget with GitHub Action:**
 
-Now for a new shell session you should be able to run a command like this:
-
-```sh
-BRANCH=feature-one RUN=40 versy calver
-```
-
-## Using It
+Here's what you should do to get your NuGet package published like this:
 
 1. Set repository secret `NUGET_API_KEY`
 2. In your repo create `.github/workflows/nuget.yml` with
@@ -49,42 +40,56 @@ jobs:
           nuget-api-key: ${{ secrets.NUGET_API_KEY }}
 ```
 
-
-And you'll get nugets published every time you push with version like this:
+Here's a colored view of a version you might get:
 
 <img src="./calver/colored-version.png" alt="drawing" width="600"/>
 
-## Gitlab
+**Docker Image with Gitlab:**
 
-Here's a _very opinionated_ (due to the usage of docker) example of a GitLab job:
+> Check out the details [here](./gitlab/README.md)
 
 ```yaml
-image: docker:latest
+image: docker:24.0
 
-services:
-  - docker:dind
+stages:
+  - build
 
-internalapi-nuget:
+build-api:
   stage: build
-  tags:
-    - docker
   only:
     changes:
-      - /my/awesome/lib/**/*
+      - api/**/*
       - .gitlab-ci.yml
   script:
-    - # install dotnet
-    - apk add --no-cache icu-libs krb5-libs libgcc libintl libssl3 libstdc++ zlib curl bash ca-certificates
-    - curl -sSL https://dot.net/v1/dotnet-install.sh | bash /dev/stdin --channel 8.0 --install-dir /usr/share/dotnet
-    - export PATH=$PATH:/usr/share/dotnet
-    - dotnet --version
-    - # do the job
-    - export SOURCING_URL=https://raw.githubusercontent.com/astorDev/versy/main
     - export MAIN=dev
-    - export BRANCH=$CI_COMMIT_REF_NAME
-    - export RUN=$CI_PIPELINE_IID
-    - export PROJECT=my/awesome/lib/My.Awesome.Lib
-    - export NUGET_SOURCE="${CI_API_V4_URL}/projects/${CI_PROJECT_ID}/packages/nuget/index.json"
-    - export NUGET_API_KEY=$CI_JOB_TOKEN
-    - curl -sSL $SOURCING_URL/.sh | sh -s calver_nuget
+    - export IMAGE=$CI_REGISTRY_IMAGE/api
+    - export DOCKERFILE_PATH=api/host/Dockerfile
+    - export BUILD_CONTEXT_PATH=api
+    - export USE_BUILDX=false
+
+    - apk add curl
+    - export SOURCING_URL=https://raw.githubusercontent.com/astorDev/versy/gitlab
+    - curl -sSL $SOURCING_URL/.sh | sh -s gitlab_calver_docker
+```
+
+## Different Ways to Run the Scripts
+
+**From the repository root:**
+
+```sh
+RUN=32 BRANCH=beta sh .sh calver
+```
+
+**Installed locally:**
+
+Add the repo to the path, e.g. open the configuration file in VS Code (`code ~/.bash_profile`) and add
+
+```sh
+export PATH="$PATH:/Users/egortarasov/repos/versy"
+```
+
+In a new shell session you should be able to run a command like this:
+
+```sh
+BRANCH=feature-one RUN=40 versy calver
 ```
