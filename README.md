@@ -1,6 +1,6 @@
 # Versy
 
-Scripts and GitHub Actions for creating versions of: [NuGet](./nuget/README.md), [Docker Images](./calver/docker/action.yaml), and others. Build mostly on [CalVer](./calver/README.md) - seemless date-based versioning system. You can check how it works by running the script below:
+Scripts and GitHub Actions for creating versions of: [NuGet](./nuget/README.md), [Docker Images](./calver/docker/action.yaml), and others. Build mostly on [CalVer](./calver/README.md) - seamless date-based versioning system. You can check how it works by running the script below:
 
 ```sh
 export BRANCH=feature-one RUN=8
@@ -13,7 +13,7 @@ Here's how the script result might look like:
 
 ## Using CalVer In CI Pipelines
 
-Here's a few examples of packing things with CalVer using our helper tools:
+Here are a few examples of packing things with CalVer using our helper tools:
 
 **Nuget with GitHub Action:**
 
@@ -82,13 +82,13 @@ RUN=32 BRANCH=beta sh .sh calver
 
 **Installed locally:**
 
-Add the repo to the path, e.g. open configuration file in VS Code `code ~/.bash_profile` and add
+Add the repo to the path, e.g. open the configuration file in VS Code (`code ~/.bash_profile`) and add
 
 ```sh
 export PATH="$PATH:/Users/egortarasov/repos/versy"
 ```
 
-Now for a new shell session you should be able to run a command like this:
+In a new shell session you should be able to run a command like this:
 
 ```sh
 BRANCH=feature-one RUN=40 versy calver
