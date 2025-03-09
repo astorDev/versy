@@ -21,15 +21,15 @@ Here's an example of what we might get in return:
 
 As you see, we've generated a version number, which indicates the day the version was generated, along with `RUN` number to differentiate versions in case we were building multiple that day and `BRANCH` name, which is appended if the branch is not `MAIN` to indicate a preview version.
 
-What's great about that version is that it is SemVer-compatible and alphabetical which will make it work with practically all the systems involving versions. We've prepended one `1` to the month and day number specifically for it to stay both alphabetically-sortable and SemVer compatible i.e. systems like Nuget doesn't differentiate between `01` and just `1`.
+What's great about that version is that it is SemVer-compatible and alphabetical, making it suitable for practically any of the systems involving versions. We've prepended one `1` to the month and day number specifically for it to stay both alphabetically-sortable and SemVer compatible, i.e. systems like Nuget don't differentiate between `01` and just `1`.
 
 Here's the same explanation as a picture:
 
 ![](calver.png)
 
-Although the version is SemVer-compatible we didn't have about any of the stuff we would have if using the real SemVer versioning. We didn't have to think about whether our changes were breaking or not, how significant were the changes and whether we should stay in beta with `0.x` or not.
+Although the version is SemVer-compatible, we didn't have any complications from a real SemVer versioning. We didn't have to think about whether our changes were breaking or not, how significant the changes were, and whether we should stay in beta with `0.x` or not.
 
-That seamless versioning is especially useful for internal packages, images and stuff like that, when we fully aware of the state of our dependencies and the speed of iteration is more important for us than the stability of the integration.
+That seamless versioning is especially useful for internal packages, images, and stuff like that, when weare  fully aware of the state of our dependencies and the speed of iteration is more important for us than the stability of the integration.
 
 ## A Practical Example: GitHub Action for Docker Images
 
