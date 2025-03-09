@@ -6,6 +6,79 @@ Today, most software projects rely on **Semantic Versioning (SemVer)** to manage
 
 But what if there was a versioning style that didn’t require you to spend time overthinking releases—one that was both easy to remember and informative? Enter **Calendar Versioning (CalVer)**, a simpler, time-based approach that takes the guesswork out of versioning. In this article, we’ll explore how CalVer works and demonstrate its power by automating it in a GitHub Actions CI pipeline to tag Docker images.
 
+## An Example CalVer Version
+
+```sh
+export BRANCH=feature-one RUN=8
+curl -sSL https://raw.githubusercontent.com/astorDev/versy/refs/heads/main/versy | sh -s calver
+```
+
+![](demo-101.png)
+
+![](calver.png)
+
+## A Practical Example: GitHub Action for Docker Images
+
+```yaml
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: astorDev/versy/calver/docker@main
+        with:
+            # ...
+```
+
+```yaml
+image: 'my-docker-name/service-a'
+# ...
+docker-login: my-docker-name
+docker-password: ${{ secrets.DOCKER_PASSWORD }}
+```
+
+```yaml
+build-context-path: 'service-a'
+dockerfile-path: 'service-a/Dockerfile'
+```
+
+```yaml
+on:
+  push:
+    paths:
+      - '.github/workflows/service-a.yml'
+      - 'service-a/**'
+  workflow_dispatch:
+```
+
+```yaml
+on:
+  push:
+    paths:
+      - '.github/workflows/service-a.yml'
+      - 'service-a/**'
+  workflow_dispatch:
+    
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: astorDev/versy/calver/docker@main
+        with:
+          image: 'my-docker-name/service-a'
+          build-context-path: 'service-a'
+          dockerfile-path: 'service-a/Dockerfile'
+          docker-login: my-docker-name
+          docker-password: ${{ secrets.DOCKER_PASSWORD }}
+```
+
+![](docker-feature-part-1.png)
+
+![](docker-feature-part-2.png)
+
+![](docker-main-part-1.png)
+
+![](docker-main-part-2.png)
+
 ## Wrapping Up!
 
 Versioning doesn’t have to be complicated. While SemVer has been the go-to approach for years, it often comes with unnecessary overhead—forcing developers to manually track versions and arbitrarily decide release sizes. CalVer, on the other hand, offers a simpler, time-based alternative that eliminates the guesswork and keeps your versioning process clean and intuitive.
