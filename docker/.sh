@@ -64,7 +64,7 @@ push_docker() {
         $BUILD_COMMAND
     else
         log "USE_BUILDX is set to false. Using regular build"
-        BUILD_COMMAND="docker build --push $EXTRA_FLAGS $BUILD_CONTEXT_PATH --file $DOCKERFILE_PATH $TAG_OPTIONS"
+        BUILD_COMMAND="docker build --push $EXTRA_FLAGS $BUILD_CONTEXT_PATH --build-arg VERSION=$VERSION --file $DOCKERFILE_PATH $TAG_OPTIONS"
         log "Executing: $BUILD_COMMAND"
         $BUILD_COMMAND
     fi
