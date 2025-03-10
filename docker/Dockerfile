@@ -4,4 +4,4 @@ ARG VERSION
 ENV VERSION=${VERSION}
 
 COPY hello-docker.sh hello-docker.sh
-CMD sh hello-docker.sh
+ENTRYPOINT sh hello-docker.sh
