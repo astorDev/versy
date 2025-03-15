@@ -4,13 +4,14 @@ on:
       - '.github/workflows/calver-nuget.yaml'
       - 'calver/nuget/**'
       - 'nuget/**'
+      - 'dotnet/lib/**'
       - '.sh'
 jobs:
   local-action:
     runs-on: ubuntu-latest
     steps:
-      - uses: astorDev/versy/calver/nuget@dotnet-version-experiment
+      - uses: astorDev/versy/calver/nuget@main
         with:
-          project: 'nuget/Versy'
+          project: 'dotnet/lib/Versy'
           script-branch: ${{ github.ref_name }}
           nuget-api-key: ${{ secrets.NUGET_API_KEY }}
