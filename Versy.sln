@@ -5,6 +5,12 @@ VisualStudioVersion = 17.5.002.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Versy", "nuget\Versy.csproj", "{584CEB38-CB30-4642-9BF7-BE91846ABE07}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "dotnet", "dotnet", "{D13F5AA5-87CC-4CF6-94AF-ADEE030817C6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Versy", "dotnet\lib\Versy.csproj", "{499A174E-A223-4C26-A05E-EE80624696B8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Versy.Playground", "dotnet\playground\Versy.Playground.csproj", "{F5A049F1-9ACC-49D9-8632-C96EDE2EF4DB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,11 +21,23 @@ Global
 		{584CEB38-CB30-4642-9BF7-BE91846ABE07}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{584CEB38-CB30-4642-9BF7-BE91846ABE07}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{584CEB38-CB30-4642-9BF7-BE91846ABE07}.Release|Any CPU.Build.0 = Release|Any CPU
+		{499A174E-A223-4C26-A05E-EE80624696B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{499A174E-A223-4C26-A05E-EE80624696B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{499A174E-A223-4C26-A05E-EE80624696B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{499A174E-A223-4C26-A05E-EE80624696B8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F5A049F1-9ACC-49D9-8632-C96EDE2EF4DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F5A049F1-9ACC-49D9-8632-C96EDE2EF4DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F5A049F1-9ACC-49D9-8632-C96EDE2EF4DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F5A049F1-9ACC-49D9-8632-C96EDE2EF4DB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {69CE9C50-E140-4643-B55E-DCAE166D1822}
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{499A174E-A223-4C26-A05E-EE80624696B8} = {D13F5AA5-87CC-4CF6-94AF-ADEE030817C6}
+		{F5A049F1-9ACC-49D9-8632-C96EDE2EF4DB} = {D13F5AA5-87CC-4CF6-94AF-ADEE030817C6}
 	EndGlobalSection
 EndGlobal

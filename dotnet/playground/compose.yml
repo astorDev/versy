@@ -1,0 +1,11 @@
+name: versy
+
+services:
+  playground:
+    build: 
+      context: ..
+      dockerfile: playground/Dockerfile
+      args:
+        - VERSION=dock-1
+    ports:
+      - "5242:8080"
