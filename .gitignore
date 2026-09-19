@@ -12,3 +12,5 @@ bld/
 playground.*
 *.nupkg
 inbox.md
+
+.env

@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.002.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Versy", "nuget\Versy.csproj", "{584CEB38-CB30-4642-9BF7-BE91846ABE07}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Versy", "nuget\Versy.Nuget.csproj", "{584CEB38-CB30-4642-9BF7-BE91846ABE07}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "dotnet", "dotnet", "{D13F5AA5-87CC-4CF6-94AF-ADEE030817C6}"
 EndProject
